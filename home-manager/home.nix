@@ -39,6 +39,13 @@
     ni
     tree
 
+    # function
+    gnupg
+    pinentry-tty
+    openssl
+    protobuf
+    rustup
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
