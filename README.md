@@ -1,5 +1,20 @@
 # ph0ryn's Nix-darwin config
 
+## command
+
+update
+
+```shell
+nix flake update nixpkgs
+nix flake update home-manager
+```
+
+switch
+
+```shell
+home-manager switch --flake .#ph0ryn
+```
+
 ## env
 
 ```shell
