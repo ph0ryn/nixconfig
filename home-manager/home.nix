@@ -38,6 +38,7 @@
     # util
     ni
     tree
+    git-filter-repo
 
     # function
     gnupg
