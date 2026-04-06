@@ -20,6 +20,7 @@
   home.packages = with pkgs; [
     nixfmt
     git
+    pnpm
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
