@@ -15,6 +15,10 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
+  imports = [
+    ./mongodb.nix
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
