@@ -23,6 +23,7 @@
 
     # package manager
     pnpm
+    uv
 
     # linter & formatter
     nixfmt
