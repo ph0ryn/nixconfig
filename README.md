@@ -13,6 +13,7 @@ switch
 
 ```shell
 home-manager switch --flake .#ph0ryn
+sudo darwin-rebuild switch --flake .#AirPh0ryn
 ```
 
 ## env
