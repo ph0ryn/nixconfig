@@ -15,6 +15,7 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       home-manager,
       nix-darwin,
@@ -34,6 +35,7 @@
         ];
       };
       darwinConfigurations."AirPh0ryn" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit self; };
         modules = [ ./nix-darwin/configuration.nix ];
       };
     };
