@@ -27,12 +27,13 @@
     git
 
     # package manager
+    nodejs_24 # for npm
     pnpm
     uv
 
     # runtime
-    python315
     bun
+    python315
 
     # linter & formatter
     nixfmt
