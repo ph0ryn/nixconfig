@@ -30,6 +30,10 @@
     pnpm
     uv
 
+    # runtime
+    python315
+    bun
+
     # linter & formatter
     nixfmt
     treefmt
