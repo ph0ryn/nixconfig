@@ -29,6 +29,10 @@
       show-recents = false;
       launchanim = true;
       mineffect = "scale";
+      orientation = "bottom";
+      tilesize = 16;
+      magnification = true;
+      largesize = 32;
     };
 
     # misc
