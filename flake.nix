@@ -22,21 +22,15 @@
       ...
     }:
     let
-      system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
+      user = "ph0ryn";
     in
     {
-      nixpkgs.config.allowUnfree = true;
-      homeConfigurations."ph0ryn" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./configuration.nix
-          ./home-manager/home.nix
-        ];
-      };
       darwinConfigurations."AirPh0ryn" = nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit self; };
-        modules = [ ./nix-darwin/configuration.nix ];
+        specialArgs = { inherit self user; };
+        modules = [
+          ./nix-darwin/configuration.nix
+          home-manager.darwinModules.home-manager
+        ];
       };
     };
 }
