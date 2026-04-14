@@ -15,16 +15,16 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
-    ./mongodb.nix
-    ./starship.nix
     ./zsh
+    ./git.nix
+    ./starship.nix
+    ./mongodb.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
     # core
-    git
 
     # package manager
     nodejs_24 # for npm
