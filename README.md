@@ -7,12 +7,12 @@ update
 ```shell
 nix flake update nixpkgs
 nix flake update home-manager
+nix flake update nix-darwin
 ```
 
 switch
 
 ```shell
-home-manager switch --flake .#ph0ryn
 sudo darwin-rebuild switch --flake .#AirPh0ryn
 ```
 
