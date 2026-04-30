@@ -7,7 +7,7 @@ if [ -d ".git" ]; then
   return 1
 fi
 
-git clone git@github.com.ph:ph0ryn/ts-base.git .
+git clone git@github.com:ph0ryn/ts-base.git .
 
 rm -rf .git
 
