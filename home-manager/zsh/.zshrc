@@ -3,7 +3,7 @@ alias pip='pip3'
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# my util fanctions
+# my util functions
 
 alias mdlint='markdownlint-cli2 "**/*.md" --config ~/.markdownlint-cli2.jsonc'
 
@@ -19,17 +19,19 @@ function init_ts() {
   git commit -m "Initial commit"
 }
 
+## ghq + fzf: Ctrl+G to fuzzy-jump to repository
 ghq-fzf() {
   local repo
+
   repo=$(ghq list | fzf \
-    --preview 'bat --color=always --style=plain "$(ghq root)/{}/README.md" 2>/dev/null || ls -la "$(ghq root)/{}"' \
+    --preview 'bat --color=always --style=plain $(ghq root)/{}/README.md 2>/dev/null || ls -la $(ghq root)/{}' \
     --prompt="repo> " \
     --height 40% \
     --layout=reverse \
     --border)
 
   if [ -n "$repo" ]; then
-    BUFFER="cd -- \"$(ghq root)/$repo\""
+    BUFFER="cd -- $(ghq root)/$repo"
     zle accept-line
   fi
 
@@ -38,6 +40,15 @@ ghq-fzf() {
 
 zle -N ghq-fzf
 bindkey "^g" ghq-fzf
+
+## reload shell
+reload-shell() {
+  clear
+  exec zsh -l
+}
+
+zle -N reload-shell
+bindkey '^l' reload-shell
 
 # npm cli
 export PATH=$PATH:/Users/ph0ryn/.npm-global/bin
