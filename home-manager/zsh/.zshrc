@@ -5,41 +5,13 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # my util functions
 
+fpath=(~/.config/zsh/functions $fpath)
+autoload -Uz ~/.config/zsh/functions/*(.:t)
+
 alias mdlint='markdownlint-cli2 "**/*.md" --config ~/.markdownlint-cli2.jsonc'
 
-function init_ts() {
-  if [ -d ".git" ]; then
-    echo ".git directory already exists. Please run this command in an empty directory."
-    return 1
-  fi
-  git clone git@github.com.ph:ph0ryn/ts-base.git .
-  rm -rf .git
-  git init
-  git add .
-  git commit -m "Initial commit"
-}
-
-## ghq + fzf: Ctrl+G to fuzzy-jump to repository
-ghq-fzf() {
-  local repo
-
-  repo=$(ghq list | fzf \
-    --preview 'bat --color=always --style=plain $(ghq root)/{}/README.md 2>/dev/null || ls -la $(ghq root)/{}' \
-    --prompt="repo> " \
-    --height 40% \
-    --layout=reverse \
-    --border)
-
-  if [ -n "$repo" ]; then
-    BUFFER="cd -- $(ghq root)/$repo"
-    zle accept-line
-  fi
-
-  zle reset-prompt
-}
-
-zle -N ghq-fzf
-bindkey "^g" ghq-fzf
+zle -N jump-ghq
+bindkey "^g" jump-ghq
 
 # npm cli
 export PATH=$PATH:/Users/ph0ryn/.npm-global/bin

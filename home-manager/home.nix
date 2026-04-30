@@ -41,9 +41,10 @@
     swiftlint
     swiftformat
 
-    # util
+    # cli utils
     ni
     tree
+    gh
     git-filter-repo
     ghq
     fzf

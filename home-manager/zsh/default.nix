@@ -6,4 +6,6 @@
     profileExtra = builtins.readFile ./.zprofile;
     initContent = builtins.readFile ./.zshrc;
   };
+
+  home.file.".config/zsh/functions".source = ./functions;
 }

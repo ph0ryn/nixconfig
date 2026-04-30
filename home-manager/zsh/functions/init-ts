@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+# init-ts: Initialize a new TypeScript project
+
+if [ -d ".git" ]; then
+  echo ".git directory already exists. Please run this command in an empty directory."
+  return 1
+fi
+
+git clone git@github.com.ph:ph0ryn/ts-base.git .
+
+rm -rf .git
+
+git init
+git add .
+git commit -m "Initial commit"
