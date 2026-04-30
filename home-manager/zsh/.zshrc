@@ -41,15 +41,6 @@ ghq-fzf() {
 zle -N ghq-fzf
 bindkey "^g" ghq-fzf
 
-## reload shell
-reload-shell() {
-  clear
-  exec zsh -l
-}
-
-zle -N reload-shell
-bindkey '^l' reload-shell
-
 # npm cli
 export PATH=$PATH:/Users/ph0ryn/.npm-global/bin
 
