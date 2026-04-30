@@ -45,6 +45,9 @@
     ni
     tree
     git-filter-repo
+    ghq
+    fzf
+    bat
 
     # function
     gnupg
