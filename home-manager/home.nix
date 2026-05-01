@@ -60,7 +60,6 @@
     ffmpeg
   ];
 
-
   home.file = {
     ".nirc".text = ''
       ; fallback when no lock found
