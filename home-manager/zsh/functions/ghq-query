@@ -88,7 +88,7 @@ full_name=$(
   return 0 2>/dev/null || exit 0
 }
 
-ghq get "github.com/${full_name}" "${ghq_args[@]}" || {
+ghq get "git@github.com:${full_name}.git" "${ghq_args[@]}" || {
   return 1 2>/dev/null || exit 1
 }
 
