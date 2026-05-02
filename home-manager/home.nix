@@ -49,6 +49,7 @@
     ghq
     fzf
     bat
+    ripgrep
 
     # function
     gnupg
