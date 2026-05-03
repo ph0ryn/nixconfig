@@ -15,8 +15,7 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
-    ./zsh
-    ./git.nix
+    ./zsh.nix
     ./starship.nix
     ./mongodb.nix
   ];
@@ -25,6 +24,8 @@
   # environment.
   home.packages = with pkgs; [
     # core
+    git
+    chezmoi
 
     # package manager
     nodejs_24 # for npm
@@ -59,15 +60,10 @@
     rustup
     llama-cpp
     ffmpeg
+    pre-commit
   ];
 
   home.file = {
-    ".nirc".text = ''
-      ; fallback when no lock found
-      defaultAgent=pnpm
-      ; for global installs
-      globalAgent=pnpm
-    '';
   };
 
   # Home Manager can also manage your environment variables through
