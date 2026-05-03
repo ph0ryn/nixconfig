@@ -6,6 +6,7 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
+    ./gh.nix
   ];
 
   home.packages = with pkgs; [
@@ -31,7 +32,6 @@
     # cli utils
     ni
     tree
-    gh
     git-filter-repo
     ghq
     fzf
@@ -70,9 +70,6 @@
 
   programs.home-manager.enable = true;
 
-  programs.zsh.enable = true;
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  programs.zsh.enable = false;
+  programs.starship.enable = true;
 }

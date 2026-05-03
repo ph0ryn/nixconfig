@@ -11,6 +11,10 @@
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    gh-fzf-get = {
+      url = "github:ph0ryn/gh-fzf-get";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -19,6 +23,7 @@
       nixpkgs,
       home-manager,
       nix-darwin,
+      gh-fzf-get,
       ...
     }:
     let
@@ -30,6 +35,9 @@
         modules = [
           ./nix-darwin/configuration.nix
           home-manager.darwinModules.home-manager
+          {
+            nixpkgs.overlays = [ gh-fzf-get.overlays.default ];
+          }
         ];
       };
     };

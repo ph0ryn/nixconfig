@@ -1,0 +1,26 @@
+{ pkgs, ... }:
+{
+  programs.gh = {
+    enable = true;
+
+    extensions = [
+      pkgs.gh-fzf-get
+    ];
+
+    settings = {
+      version = 1;
+      git_protocol = "ssh";
+      prompt = "enabled";
+      prefer_editor_prompt = "disabled";
+
+      aliases = {
+        co = "pr checkout";
+      };
+
+      color_labels = "enabled";
+      accessible_colors = "disabled";
+      accessible_prompter = "disabled";
+      spinner = "enabled";
+    };
+  };
+}
