@@ -5,6 +5,7 @@
 
     extensions = [
       pkgs.gh-fzf-get
+      pkgs.gh-license
     ];
 
     settings = {

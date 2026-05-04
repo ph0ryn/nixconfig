@@ -15,6 +15,10 @@
       url = "github:ph0ryn/gh-fzf-get";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    gh-license = {
+      url = "github:ph0ryn/gh-license";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -24,6 +28,7 @@
       home-manager,
       nix-darwin,
       gh-fzf-get,
+      gh-license,
       ...
     }:
     let
@@ -36,7 +41,10 @@
           ./nix-darwin/configuration.nix
           home-manager.darwinModules.home-manager
           {
-            nixpkgs.overlays = [ gh-fzf-get.overlays.default ];
+            nixpkgs.overlays = [
+              gh-fzf-get.overlays.default
+              gh-license.overlays.default
+            ];
           }
         ];
       };
