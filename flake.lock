@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777884796,
-        "narHash": "sha256-fOdpO/aCao78TOtgcEJ/GhUgztHzBu2ctHPSDxPfdAM=",
+        "lastModified": 1777892281,
+        "narHash": "sha256-pdWHj0PcmVeueT/e1ghOAasRTf24B1K3l+zDxZ0jz6k=",
         "owner": "ph0ryn",
         "repo": "gh-license",
-        "rev": "da817ea287b3961886b70adc9abde95f98152c91",
+        "rev": "dfa770d040adbb9e766eb3c81890ed5585cd4baf",
         "type": "github"
       },
       "original": {
