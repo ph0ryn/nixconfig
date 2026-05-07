@@ -46,7 +46,7 @@
     rustup
     llama-cpp
     ffmpeg
-    pre-commit
+    prek
 
     # mongodb
     mongodb-ce
