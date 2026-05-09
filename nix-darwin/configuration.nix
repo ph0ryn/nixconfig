@@ -22,6 +22,7 @@
   imports = [
     ./nixpkgs.nix
     ./system.nix
+    ./tailscale.nix
     ./home_manager.nix
   ];
 }
