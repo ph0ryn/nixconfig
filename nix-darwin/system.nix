@@ -43,6 +43,14 @@
         # Finder
         AppleMenuBarVisibleInFullscreen = true;
       };
+
+      pbs = {
+        NSServicesStatus = {
+          "com.mitchellh.ghostty - New Ghostty Tab Here - openTab" = {
+            key_equivalent = "@.";
+          };
+        };
+      };
     };
   };
 }
