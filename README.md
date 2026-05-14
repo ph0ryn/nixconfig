@@ -1,4 +1,6 @@
-# ph0ryn's Nix-darwin config
+# nixconfig
+
+Personal nix-managed Apple Silicon macOS configuration
 
 ## Installation
 
@@ -34,5 +36,5 @@ nix flake update nix-darwin
 switch
 
 ```shell
-sudo darwin-rebuild switch --flake .#AirPh0ryn
+sudo darwin-rebuild switch --flake ~/nixconfig#AirPh0ryn
 ```
