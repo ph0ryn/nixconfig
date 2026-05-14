@@ -7,13 +7,14 @@
 {
   system = {
     stateVersion = 6;
-    primaryUser = "ph0ryn";
+    primaryUser = user;
     configurationRevision = self.rev or self.dirtyRev or null;
   };
   nix.enable = false;
+
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  users.users."ph0ryn".home = "/Users/ph0ryn";
+  users.users.${user}.home = "/Users/${user}";
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
@@ -23,6 +24,16 @@
     ./nixpkgs.nix
     ./system.nix
     ./tailscale.nix
-    ./home_manager.nix
   ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "hm-backup";
+    users.${user} = {
+      imports = [
+        ../home-manager/home.nix
+      ];
+    };
+  };
 }
