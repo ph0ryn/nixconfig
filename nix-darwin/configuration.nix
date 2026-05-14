@@ -25,6 +25,7 @@
 
   imports = [
     ./system.nix
+    ./homebrew.nix
     ./tailscale.nix
   ];
 
