@@ -61,8 +61,12 @@
     llama-cpp
     ffmpeg
 
+    # gui apps
+    imhex
+
     # MongoDB
     mongodb-ce
+    mongodb-compass
     mongosh
   ];
 
