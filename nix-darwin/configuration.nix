@@ -1,7 +1,6 @@
 {
   self,
   user,
-  hostPlatform,
   ...
 }:
 {
@@ -10,9 +9,13 @@
     primaryUser = user;
     configurationRevision = self.rev or self.dirtyRev or null;
   };
+
   nix.enable = false;
 
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs = {
+    hostPlatform = "aarch64-darwin";
+    config.allowUnfree = true;
+  };
 
   users.users.${user}.home = "/Users/${user}";
 
@@ -21,7 +24,6 @@
   programs.zsh.enable = false;
 
   imports = [
-    ./nixpkgs.nix
     ./system.nix
     ./tailscale.nix
   ];
