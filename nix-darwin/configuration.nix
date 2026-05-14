@@ -29,6 +29,13 @@
     ./tailscale.nix
   ];
 
+  nix-homebrew = {
+    enable = true;
+    enableRosetta = false;
+    user = user;
+    autoMigrate = true;
+  };
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

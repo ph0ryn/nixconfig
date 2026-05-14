@@ -3,6 +3,12 @@
   homebrew = {
     enable = true;
 
+    onActivation = {
+      autoUpdate = true;
+      upgrade = false;
+      cleanup = "none";
+    };
+
     brews = [
       "duti"
       "jadx"
@@ -16,11 +22,5 @@
       "mitmproxy"
       "reqable"
     ];
-
-    onActivation = {
-      autoUpdate = true;
-      upgrade = false;
-      cleanup = "none";
-    };
   };
 }

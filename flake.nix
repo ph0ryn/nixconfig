@@ -11,6 +11,7 @@
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     gh-fzf-get = {
       url = "github:ph0ryn/gh-fzf-get";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,6 +28,7 @@
       nixpkgs,
       home-manager,
       nix-darwin,
+      nix-homebrew,
       gh-fzf-get,
       gh-license,
       ...
@@ -36,10 +38,11 @@
     in
     {
       darwinConfigurations."AirPh0ryn" = nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit self user; };
+        specialArgs = { inherit self user nix-homebrew; };
         modules = [
           ./nix-darwin/configuration.nix
           home-manager.darwinModules.home-manager
+          nix-homebrew.darwinModules.nix-homebrew
           {
             nixpkgs.overlays = [
               gh-fzf-get.overlays.default
