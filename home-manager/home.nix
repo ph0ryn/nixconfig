@@ -1,54 +1,61 @@
 { config, pkgs, ... }:
 {
+  programs.home-manager.enable = true;
+
   home.username = "ph0ryn";
   home.homeDirectory = "/Users/ph0ryn";
 
-  home.stateVersion = "25.11"; # Please read the comment before changing.
+  home.stateVersion = "25.11";
 
   imports = [
     ./gh.nix
   ];
+
+  # packages via programs wrapper
+  programs.starship.enable = true;
+  programs.fzf.enable = true;
 
   home.packages = with pkgs; [
     # core
     git
     chezmoi
 
-    # package manager
+    # package managers
     nodejs_24 # for npm
     pnpm
     uv
+    ni
 
-    # runtime
+    # runtimes
     bun
     python315
+    rustup
 
-    # linter & formatter
+    # linters & formatters
     nixfmt
     treefmt
     swiftlint
     swiftformat
 
-    # cli utils
-    ni
+    # cli utilities
     tree
     git-filter-repo
     ghq
-    fzf
     bat
     ripgrep
+    prek
 
-    # function
+    # security & crypto
     gnupg
     pinentry-tty
     openssl
+
+    # tools
     protobuf
-    rustup
     llama-cpp
     ffmpeg
-    prek
 
-    # mongodb
+    # MongoDB
     mongodb-ce
     mongosh
   ];
@@ -67,9 +74,4 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-
-  programs.home-manager.enable = true;
-
-  programs.zsh.enable = false;
-  programs.starship.enable = true;
 }

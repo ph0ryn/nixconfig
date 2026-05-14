@@ -17,7 +17,7 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  programs.zsh.enable = true;
+  programs.zsh.enable = false;
 
   imports = [
     ./nixpkgs.nix
