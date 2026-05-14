@@ -34,10 +34,11 @@
       ...
     }:
     let
+      hostName = "AirPh0ryn";
       user = "ph0ryn";
     in
     {
-      darwinConfigurations."AirPh0ryn" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations.${hostName} = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit self user nix-homebrew; };
         modules = [
           ./nix-darwin/configuration.nix

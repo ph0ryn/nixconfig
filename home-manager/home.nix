@@ -1,9 +1,15 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  user,
+  osConfig,
+  ...
+}:
 {
   programs.home-manager.enable = true;
 
-  home.username = "ph0ryn";
-  home.homeDirectory = "/Users/ph0ryn";
+  home.username = user;
+  home.homeDirectory = osConfig.users.users.${user}.home;
 
   home.stateVersion = "25.11";
 
