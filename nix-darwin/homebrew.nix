@@ -9,6 +9,10 @@
       cleanup = "none";
     };
 
+    caskArgs = {
+      appdir = "/Applications";
+    };
+
     brews = [
       "duti"
       "jadx"
@@ -21,6 +25,7 @@
       "macpacker"
       "mitmproxy"
       "reqable"
+      "visual-studio-code"
     ];
   };
 }
