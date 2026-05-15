@@ -28,7 +28,7 @@
 
     # package managers
     nodejs_24 # for npm
-    pnpm
+    pnpm_11
     uv
     ni
 
