@@ -26,6 +26,7 @@
       "mitmproxy"
       "reqable"
       "visual-studio-code"
+      "font-plemol-jp-nf"
     ];
   };
 }
