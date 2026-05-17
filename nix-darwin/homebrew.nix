@@ -19,6 +19,10 @@
       "python@3.14"
     ];
 
+    masApps = {
+      Amphetamine = 937984704;
+    };
+
     casks = [
       "anaconda"
       "ghostty"
