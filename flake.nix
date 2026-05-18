@@ -20,6 +20,10 @@
       url = "github:ph0ryn/gh-license";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hf-nix = {
+      url = "github:huggingface/hf-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -31,6 +35,7 @@
       nix-homebrew,
       gh-fzf-get,
       gh-license,
+      hf-nix,
       ...
     }:
     let
@@ -48,6 +53,7 @@
             nixpkgs.overlays = [
               gh-fzf-get.overlays.default
               gh-license.overlays.default
+              hf-nix.overlays.default
             ];
           }
         ];

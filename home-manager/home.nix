@@ -57,6 +57,7 @@
     openssl
 
     # tools
+    python3Packages.huggingface-hub
     protobuf
     llama-cpp
     ffmpeg
