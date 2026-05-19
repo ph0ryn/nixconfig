@@ -16,18 +16,19 @@
     brews = [
       "duti"
       "jadx"
+      "neovim"
       "python@3.14"
     ];
 
     casks = [
       "azookey"
       "anaconda"
+      "font-plemol-jp-nf"
       "ghostty"
       "macpacker"
       "mitmproxy"
       "reqable"
       "visual-studio-code"
-      "font-plemol-jp-nf"
     ];
   };
 }
