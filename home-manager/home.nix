@@ -36,6 +36,7 @@
     bun
     python315
     rustup
+    go
 
     # linters & formatters
     nixfmt
