@@ -16,7 +16,6 @@
     brews = [
       "duti"
       "jadx"
-      "neovim"
       "python@3.14"
     ];
 
