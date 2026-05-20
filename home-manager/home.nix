@@ -73,7 +73,7 @@
   xdg.configFile."chezmoi/chezmoi.toml".source = (pkgs.formats.toml { }).generate "chezmoi.toml" {
     sourceDir = "~/chezmoi";
     git = {
-      autoCommit = true;
+      autoCommit = false;
       autoPush = false;
     };
   };
