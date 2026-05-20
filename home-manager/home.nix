@@ -15,7 +15,7 @@
 
   imports = [
     ./git.nix
-    ./neovim.nix
+    ./nixvim.nix
   ];
 
   # packages via programs wrapper

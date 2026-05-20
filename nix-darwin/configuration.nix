@@ -1,5 +1,6 @@
 {
   self,
+  nixvim,
   user,
   ...
 }:
@@ -40,7 +41,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "hm-backup";
-    extraSpecialArgs = { inherit user; };
+    extraSpecialArgs = { inherit user nixvim; };
     users.${user} = {
       imports = [
         ../home-manager/home.nix

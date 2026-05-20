@@ -27,6 +27,11 @@
       url = "github:huggingface/hf-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -39,6 +44,7 @@
       gh-fzf-get,
       gh-license,
       hf-nix,
+      nixvim,
       ...
     }:
     let
@@ -47,7 +53,14 @@
     in
     {
       darwinConfigurations.${hostName} = nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit self user nix-homebrew; };
+        specialArgs = {
+          inherit
+            self
+            user
+            nix-homebrew
+            nixvim
+            ;
+        };
         modules = [
           ./nix-darwin/configuration.nix
           home-manager.darwinModules.home-manager
