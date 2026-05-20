@@ -15,6 +15,7 @@
 
   imports = [
     ./gh.nix
+    ./git.nix
   ];
 
   # packages via programs wrapper
@@ -23,7 +24,6 @@
 
   home.packages = with pkgs; [
     # core
-    git
     chezmoi
 
     # package managers
@@ -46,12 +46,9 @@
 
     # cli utilities
     tree
-    git-filter-repo
-    ghq
     bat
     ripgrep
     prek
-    lazygit
     yazi
 
     # security & crypto
