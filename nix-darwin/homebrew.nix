@@ -27,6 +27,7 @@
       "ghostty"
       "macpacker"
       "mitmproxy"
+      "karabiner-elements"
       "reqable"
       "visual-studio-code"
     ];
