@@ -51,6 +51,8 @@
     bat
     ripgrep
     prek
+    lazygit
+    yazi
 
     # security & crypto
     gnupg
