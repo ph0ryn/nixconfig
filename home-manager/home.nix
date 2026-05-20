@@ -14,7 +14,6 @@
   home.stateVersion = "25.11";
 
   imports = [
-    ./gh.nix
     ./git.nix
   ];
 
