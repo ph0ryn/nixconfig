@@ -12,6 +12,11 @@ repos:
             - "!**/flake.lock"
   - repo: local
     hooks:
+      - id: nix-flake-check
+        name: nix-flake-check
+        entry: nix flake check
+        language: system
+        files: ^flake.nix$
       - id: nix-fmt
         name: nix-fmt
         entry: treefmt
