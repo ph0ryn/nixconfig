@@ -1,9 +1,4 @@
-{ nixvim, ... }:
 {
-  imports = [
-    nixvim.homeModules.nixvim
-  ];
-
   programs.nixvim = {
     enable = true;
 
@@ -15,12 +10,8 @@
       transparent_enabled = true;
     };
 
+    colorschemes.catppuccin.enable = true;
+
     nixpkgs.useGlobalPackages = true;
-    plugins = {
-      transparent = {
-        enable = true;
-        autoLoad = true;
-      };
-    };
   };
 }
