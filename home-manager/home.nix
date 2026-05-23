@@ -37,6 +37,7 @@
     python315
     rustup
     go
+    deno
 
     # linters & formatters
     nixfmt
