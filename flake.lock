@@ -17,6 +17,26 @@
         "type": "github"
       }
     },
+    "filetree-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779555403,
+        "narHash": "sha256-OURdQ4oqlRc6fqeKTNMKRYDgiVQ+o68Akwe5yJiXU9U=",
+        "owner": "ph0ryn",
+        "repo": "filetree-nix",
+        "rev": "ffd3a8c1221b23251b4acc77f073504a782bd4a8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ph0ryn",
+        "repo": "filetree-nix",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "locked": {
         "lastModified": 1761588595,
@@ -299,6 +319,7 @@
     },
     "root": {
       "inputs": {
+        "filetree-nix": "filetree-nix",
         "gh-fzf-get": "gh-fzf-get",
         "gh-license": "gh-license",
         "hf-nix": "hf-nix",

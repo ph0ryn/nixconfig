@@ -51,6 +51,7 @@
     ripgrep
     prek
     yazi
+    filetree
 
     # security & crypto
     gnupg

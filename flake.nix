@@ -14,6 +14,16 @@
     };
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
+    hf-nix = {
+      url = "github:huggingface/hf-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     gh-fzf-get = {
       url = "github:ph0ryn/gh-fzf-get";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,14 +32,8 @@
       url = "github:ph0ryn/gh-license";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hf-nix = {
-      url = "github:huggingface/hf-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
+    filetree-nix = {
+      url = "github:ph0ryn/filetree-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -43,6 +47,7 @@
       nix-homebrew,
       gh-fzf-get,
       gh-license,
+      filetree-nix,
       hf-nix,
       nixvim,
       ...
@@ -69,6 +74,7 @@
             nixpkgs.overlays = [
               gh-fzf-get.overlays.default
               gh-license.overlays.default
+              filetree-nix.overlays.default
               hf-nix.overlays.default
             ];
           }
