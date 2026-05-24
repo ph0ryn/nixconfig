@@ -9,6 +9,6 @@
     ./opts.nix
     ./lsp.nix
     ./plugins.nix
-    ./extraPlugins.nix
+    ./extra.nix
   ];
 }
