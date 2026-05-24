@@ -4,10 +4,10 @@
       lsp = {
         enable = true;
         servers = {
-          nixd.enable = true;
           lua_ls.enable = true;
-          ts_ls.enable = true;
+          nixd.enable = true;
           ruff.enable = true;
+          tsgo.enable = true;
         };
       };
     };
