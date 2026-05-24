@@ -4,6 +4,7 @@
     git
     git-filter-repo
     ghq
+    keifu
   ];
 
   programs.lazygit = {
