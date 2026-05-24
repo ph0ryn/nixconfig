@@ -1,34 +1,15 @@
 { pkgs, ... }:
 {
   programs.nixvim = {
-    extraPlugins = [
-      pkgs.vimPlugins.denops-vim
-    ];
-
     plugins = {
-      lsp = {
-        enable = true;
-        servers = {
-          nil_ls.enable = true;
-          lua_ls.enable = true;
-          ts_ls.enable = true;
-          ruff.enable = true;
-        };
-      };
-
-      transparent = {
-        enable = true;
-        autoLoad = true;
-      };
-
-      gitsigns = {
-        enable = true;
-        autoLoad = true;
-      };
+      barbar.enable = true;
+      fidget.enable = true;
+      transparent.enable = true;
+      gitsigns.enable = true;
+      which-key.enable = true;
 
       hlchunk = {
         enable = true;
-        autoLoad = true;
         settings = {
           blank.enable = false;
           chunk = {
@@ -56,10 +37,8 @@
         };
       };
 
-      which-key = {
-        enable = true;
-        autoLoad = true;
-      };
+      # dependencies
+      web-devicons.enable = true;
     };
   };
 }
