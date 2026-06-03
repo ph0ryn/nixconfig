@@ -52,6 +52,7 @@
     prek
     yazi
     filetree
+    frida-tools
 
     # security & crypto
     gnupg
