@@ -29,6 +29,7 @@
       "mitmproxy"
       "reqable"
       "visual-studio-code"
+      "zed"
     ];
   };
 }
