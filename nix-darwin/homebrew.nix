@@ -27,9 +27,10 @@
       "ghostty"
       "macpacker"
       "mitmproxy"
+      "raycast"
       "reqable"
-      "visual-studio-code"
       "zed"
+      "visual-studio-code"
     ];
   };
 }
