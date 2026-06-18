@@ -27,7 +27,6 @@
     chezmoi
 
     # package managers
-    nodejs_24 # for npm
     pnpm_11
     uv
     ni
