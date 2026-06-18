@@ -22,7 +22,6 @@
 
     casks = [
       "azookey"
-      "anaconda"
       "cmux"
       "font-plemol-jp-nf"
       "ghostty"
