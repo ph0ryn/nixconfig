@@ -45,6 +45,7 @@ in
     rustup
     go
     deno
+    jdk21
 
     # linters & formatters
     nixfmt
@@ -94,5 +95,6 @@ in
 
   home.sessionVariables = {
     # EDITOR = "emacs";
+    JAVA_HOME = "${pkgs.jdk21}";
   };
 }
