@@ -23,6 +23,7 @@ in
 
   imports = [
     ./git.nix
+    ./mongodb.nix
     ./nixvim
   ];
 
@@ -75,11 +76,6 @@ in
 
     # gui apps
     imhex
-
-    # MongoDB
-    mongodb-ce
-    mongodb-compass
-    mongosh
   ];
 
   xdg.configFile."chezmoi/chezmoi.toml".source = (pkgs.formats.toml { }).generate "chezmoi.toml" {
