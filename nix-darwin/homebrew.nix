@@ -6,7 +6,7 @@
     onActivation = {
       autoUpdate = true;
       upgrade = false;
-      cleanup = "none";
+      cleanup = "zap";
     };
 
     caskArgs = {
@@ -28,6 +28,7 @@
       "ghostty"
       "macpacker"
       "mitmproxy"
+      "orbstack"
       "raycast"
       "reqable"
       "zed"
