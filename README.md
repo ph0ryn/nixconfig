@@ -35,6 +35,6 @@ nix flake update nix-darwin
 
 switch
 
-```shell
+```sh
 sudo darwin-rebuild switch --flake ~/nixconfig#AirPh0ryn
 ```
