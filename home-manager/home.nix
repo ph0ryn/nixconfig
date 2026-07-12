@@ -5,14 +5,6 @@
   osConfig,
   ...
 }:
-let
-  # Keep pnpm's Node runtime on the unoverlaid nixpkgs path so it can use the
-  # public binary cache instead of rebuilding Node and its native dependencies.
-  cachedPkgs = import pkgs.path {
-    system = pkgs.stdenv.hostPlatform.system;
-    config = pkgs.config;
-  };
-in
 {
   programs.home-manager.enable = true;
 
@@ -24,7 +16,7 @@ in
   imports = [
     ./git.nix
     ./mongodb.nix
-    ./nixvim
+    #./nixvim
   ];
 
   # packages via programs wrapper
@@ -36,7 +28,7 @@ in
     chezmoi
 
     # package managers
-    (pnpm_11.override { nodejs = cachedPkgs.nodejs-slim_26; })
+    pnpm_11
     uv
     ni
 
@@ -69,13 +61,9 @@ in
     openssl
 
     # tools
-    python3Packages.huggingface-hub
     protobuf
     llama-cpp
     ffmpeg
-
-    # gui apps
-    imhex
   ];
 
   xdg.configFile."chezmoi/chezmoi.toml".source = (pkgs.formats.toml { }).generate "chezmoi.toml" {
