@@ -30,6 +30,14 @@ in
   # packages via programs wrapper
   programs.starship.enable = true;
   programs.fzf.enable = true;
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      dates = "weekly";
+      extraArgs = "--keep-since 7d --keep-one";
+    };
+  };
 
   home.packages = with pkgs; [
     # core
