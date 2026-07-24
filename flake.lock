@@ -24,11 +24,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779555403,
-        "narHash": "sha256-OURdQ4oqlRc6fqeKTNMKRYDgiVQ+o68Akwe5yJiXU9U=",
+        "lastModified": 1784857972,
+        "narHash": "sha256-YQklQh7lsy2qIODB1NaokhieBoczShbiZgGN4NxL/IU=",
         "owner": "ph0ryn",
         "repo": "filetree-nix",
-        "rev": "ffd3a8c1221b23251b4acc77f073504a782bd4a8",
+        "rev": "2e499286fde4901c375e4627d0f6b539ab268568",
         "type": "github"
       },
       "original": {
