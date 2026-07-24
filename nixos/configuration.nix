@@ -51,6 +51,8 @@
       };
     };
 
+    logind.settings.Login.IdleAction = "ignore";
+
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -65,6 +67,13 @@
       model = "pc104";
       options = "terminate:ctrl_alt_bksp";
     };
+  };
+
+  systemd.sleep.settings.Sleep = {
+    AllowHibernation = false;
+    AllowHybridSleep = false;
+    AllowSuspend = false;
+    AllowSuspendThenHibernate = false;
   };
 
   programs.firefox.enable = true;
