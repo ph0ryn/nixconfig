@@ -44,7 +44,8 @@
     extraSpecialArgs = { inherit user nixvim; };
     users.${user} = {
       imports = [
-        ../home-manager/home.nix
+        ../home-manager
+        ../home-manager/darwin.nix
       ];
     };
   };

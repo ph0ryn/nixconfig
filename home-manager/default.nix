@@ -5,14 +5,6 @@
   osConfig,
   ...
 }:
-let
-  # Keep pnpm's Node runtime on the unoverlaid nixpkgs path so it can use the
-  # public binary cache instead of rebuilding Node and its native dependencies.
-  cachedPkgs = import pkgs.path {
-    system = pkgs.stdenv.hostPlatform.system;
-    config = pkgs.config;
-  };
-in
 {
   programs.home-manager.enable = true;
 
@@ -23,7 +15,6 @@ in
 
   imports = [
     ./git.nix
-    ./mongodb.nix
     #./nixvim
   ];
 
@@ -44,7 +35,6 @@ in
     chezmoi
 
     # package managers
-    (pnpm_11.override { nodejs-slim = cachedPkgs.nodejs-slim_26; })
     uv
     ni
 
@@ -59,9 +49,6 @@ in
     # linters & formatters
     nixfmt
     treefmt
-    swiftlint
-    swiftformat
-
     # cli utilities
     tree
     bat
