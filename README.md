@@ -1,8 +1,15 @@
 # nixconfig
 
-Personal nix-managed Apple Silicon macOS configuration
+Personal Nix configuration for macOS and NixOS.
+
+## Hosts
+
+- `AirPh0ryn`: Apple Silicon macOS managed with nix-darwin
+- `win`: x86_64 NixOS
 
 ## Installation
+
+### macOS
 
 ```sh
 # 1. install nix
@@ -19,6 +26,19 @@ git clone https://github.com/ph0ryn/chezmoi-dotfiles.git ~/chezmoi
 chezmoi apply
 ```
 
+### NixOS
+
+```sh
+# 1. clone this repository
+nix shell nixpkgs#git -c git clone https://github.com/ph0ryn/nixconfig.git ~/nixconfig
+
+# 2. test the configuration without making it the boot default
+sudo nixos-rebuild test --flake ~/nixconfig#win
+
+# 3. apply the configuration
+sudo nixos-rebuild switch --flake ~/nixconfig#win
+```
+
 ## Commands
 
 update
@@ -29,12 +49,20 @@ nix flake update
 
 # selected inputs
 nix flake update nixpkgs
+nix flake update nixpkgs-nixos
 nix flake update home-manager
+nix flake update home-manager-nixos
 nix flake update nix-darwin
 ```
 
-switch
+switch macOS
 
 ```sh
 sudo darwin-rebuild switch --flake ~/nixconfig#AirPh0ryn
+```
+
+switch NixOS
+
+```sh
+sudo nixos-rebuild switch --flake ~/nixconfig#win
 ```
