@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./service.nix
   ];
 
   nix.settings.experimental-features = [
@@ -35,39 +36,6 @@
 
   hardware.bluetooth.enable = true;
   security.rtkit.enable = true;
-
-  services = {
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
-    fstrim.enable = true;
-
-    openssh = {
-      enable = true;
-      openFirewall = true;
-      settings = {
-        KbdInteractiveAuthentication = false;
-        PasswordAuthentication = false;
-        PermitRootLogin = "no";
-      };
-    };
-
-    logind.settings.Login.IdleAction = "ignore";
-
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-
-    printing.enable = true;
-
-    xserver.xkb = {
-      layout = "jp";
-      model = "pc104";
-      options = "terminate:ctrl_alt_bksp";
-    };
-  };
 
   systemd.sleep.settings.Sleep = {
     AllowHibernation = false;
