@@ -30,7 +30,6 @@
       "raycast"
       "reqable"
       "zed"
-      "visual-studio-code"
     ];
   };
 }
