@@ -30,6 +30,7 @@
 
   imports = [
     ../../modules
+    ../../modules/starship
     ../../modules/git.nix
   ];
 }

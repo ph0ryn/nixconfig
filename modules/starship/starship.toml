@@ -1,0 +1,74 @@
+add_newline = false
+command_timeout = 1300
+format = """
+[](element1)\
+$username\
+[](fg:element1 bg:element2)\
+$directory\
+[](fg:element2 bg:element3)\
+$time\
+[](fg:element3 bg:element4)\
+[](fg:element4 bg:element5)\
+[](fg:element5 bg:element6)\
+$cmd_duration\
+[](fg:element6) \
+$nix_shell$nodejs$lua$golang$rust$php$git_branch$git_commit$git_state$git_status$sudo\
+$line_break\
+$jobs$status$container$character\
+"""
+palette = "prompt"
+scan_timeout = 50
+
+[character]
+error_symbol = "[✗](bold red) "
+success_symbol = "[](bold green) "
+
+[cmd_duration]
+disabled = false
+format = "[ $duration ]($style)"
+min_time = 2000
+min_time_to_notify = 5000
+show_milliseconds = true
+show_notifications = false
+style = "fg bg:element6"
+
+[directory]
+disabled = false
+fish_style_pwd_dir_length = 0
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+home_symbol = "~"
+read_only = "🔒"
+read_only_style = "red"
+repo_root_format = "[ $before_root_path ]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)"
+style = "fg bg:element2"
+truncate_to_repo = true
+truncation_length = 3
+truncation_symbol = ".../"
+use_logical_path = true
+use_os_path_sep = true
+
+[palettes]
+[palettes.prompt]
+element1 = "#9A348E"
+element2 = "#DA627D"
+element3 = "#FCA17D"
+element4 = "#86BBD8"
+element5 = "#33658A"
+element6 = "#06969A"
+fg = "#F4F4F4"
+
+[time]
+disabled = false
+format = "[ $time ]($style)"
+style = "fg bg:element3"
+time_format = "%T"
+time_range = "-"
+use_12hr = false
+utc_time_offset = "local"
+
+[username]
+disabled = false
+format = "[$user ]($style)"
+show_always = true
+style_root = "fg bg:element1"
+style_user = "fg bg:element1"

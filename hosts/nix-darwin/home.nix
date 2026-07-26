@@ -31,6 +31,7 @@
 
   imports = [
     ../../modules
+    ../../modules/starship
     ../../modules/git.nix
     ../../modules/mongodb.nix
   ];

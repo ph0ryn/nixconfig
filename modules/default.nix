@@ -5,7 +5,6 @@
   ...
 }:
 {
-  programs.starship.enable = true;
   programs.fzf.enable = true;
   programs.nh = {
     enable = true;
