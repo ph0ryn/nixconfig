@@ -32,10 +32,7 @@ chezmoi apply
 # 1. clone this repository
 nix shell nixpkgs#git -c git clone https://github.com/ph0ryn/nixconfig.git ~/nixconfig
 
-# 2. test the configuration without making it the boot default
-sudo nixos-rebuild test --flake ~/nixconfig#NixPavilion
-
-# 3. apply the configuration
+# 2. apply the configuration
 sudo nixos-rebuild switch --flake ~/nixconfig#NixPavilion
 ```
 
@@ -43,7 +40,7 @@ sudo nixos-rebuild switch --flake ~/nixconfig#NixPavilion
 
 update
 
-```shell
+```sh
 # all
 nix flake update
 
