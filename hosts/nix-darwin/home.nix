@@ -1,8 +1,17 @@
-{ pkgs, ... }:
 {
-  imports = [
-    ./mongodb.nix
-  ];
+  user,
+  osConfig,
+  pkgs,
+  ...
+}:
+{
+  programs.home-manager.enable = true;
+
+  home = {
+    username = user;
+    homeDirectory = osConfig.users.users.${user}.home;
+    stateVersion = "25.11";
+  };
 
   home.packages = with pkgs; [
     # core
@@ -19,4 +28,10 @@
       autoPush = false;
     };
   };
+
+  imports = [
+    ../../modules
+    ../../modules/git.nix
+    ../../modules/mongodb.nix
+  ];
 }

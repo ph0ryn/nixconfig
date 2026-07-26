@@ -1,6 +1,5 @@
 {
   self,
-  nixvim,
   user,
   ...
 }:
@@ -11,7 +10,13 @@
     configurationRevision = self.rev or self.dirtyRev or null;
   };
 
-  nix.enable = false;
+  nix = {
+    enable = false;
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+  };
 
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
@@ -35,18 +40,5 @@
     enableRosetta = false;
     user = user;
     autoMigrate = true;
-  };
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtension = "hm-backup";
-    extraSpecialArgs = { inherit user nixvim; };
-    users.${user} = {
-      imports = [
-        ../home-manager
-        ../home-manager/darwin.nix
-      ];
-    };
   };
 }

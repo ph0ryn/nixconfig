@@ -1,19 +1,20 @@
 { user, ... }:
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./service.nix
-  ];
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
+
+  system.stateVersion = "26.05";
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
-  nixpkgs.config.allowUnfree = true;
 
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  nixpkgs = {
+    hostPlatform = "x86_64-linux";
+    config.allowUnfree = true;
   };
 
   networking = {
@@ -41,13 +42,6 @@
   hardware.bluetooth.enable = true;
   security.rtkit.enable = true;
 
-  systemd.sleep.settings.Sleep = {
-    AllowHibernation = false;
-    AllowHybridSleep = false;
-    AllowSuspend = false;
-    AllowSuspendThenHibernate = false;
-  };
-
   users.users.${user} = {
     isNormalUser = true;
     description = "ph0ryn";
@@ -60,18 +54,9 @@
     ];
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtension = "hm-backup";
-    extraSpecialArgs = {
-      inherit user;
-    };
-    users.${user}.imports = [
-      ../home-manager
-      ../home-manager/linux.nix
-    ];
-  };
-
-  system.stateVersion = "26.05";
+  imports = [
+    ./hardware-configuration.nix
+    ./system.nix
+    ./service.nix
+  ];
 }

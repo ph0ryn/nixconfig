@@ -54,11 +54,10 @@
       ...
     }:
     let
-      hostName = "AirPh0ryn";
       user = "ph0ryn";
     in
     {
-      darwinConfigurations.${hostName} = nix-darwin.lib.darwinSystem {
+      darwinConfigurations.AirPh0ryn = nix-darwin.lib.darwinSystem {
         specialArgs = {
           inherit
             self
@@ -68,9 +67,18 @@
             ;
         };
         modules = [
-          ./nix-darwin/configuration.nix
+          ./hosts/nix-darwin/configuration.nix
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "hm-backup";
+              extraSpecialArgs = { inherit user; };
+              users.${user} = import ./hosts/nix-darwin/home.nix;
+            };
+          }
           {
             nixpkgs.overlays = [
               gh-fzf-get.overlays.default
@@ -87,8 +95,17 @@
           inherit user;
         };
         modules = [
-          ./nixos/configuration.nix
+          ./hosts/nixos-pav/configuration.nix
           home-manager-nixos.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "hm-backup";
+              extraSpecialArgs = { inherit user; };
+              users.${user} = import ./hosts/nixos-pav/home.nix;
+            };
+          }
           {
             nixpkgs.overlays = [
               gh-fzf-get.overlays.default

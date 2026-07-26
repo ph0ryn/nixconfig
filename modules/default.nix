@@ -5,18 +5,6 @@
   ...
 }:
 {
-  programs.home-manager.enable = true;
-
-  home.username = user;
-  home.homeDirectory = osConfig.users.users.${user}.home;
-
-  home.stateVersion = "25.11";
-
-  imports = [
-    ./git.nix
-    #./nixvim
-  ];
-
   programs.starship.enable = true;
   programs.fzf.enable = true;
   programs.nh = {
@@ -54,7 +42,6 @@
     bat
     ripgrep
     prek
-    yazi
     filetree
     frida-tools
 
