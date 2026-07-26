@@ -20,8 +20,6 @@
     };
   };
 
-  programs.yazi.enable = true;
-
   programs.gh = {
     enable = true;
 

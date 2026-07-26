@@ -3,14 +3,18 @@
   ...
 }:
 {
-  programs.fzf.enable = true;
-  programs.nh = {
-    enable = true;
-    clean = {
+  programs = {
+    nh = {
       enable = true;
-      dates = "weekly";
-      extraArgs = "--keep-since 7d --keep-one";
+      clean = {
+        enable = true;
+        dates = "weekly";
+        extraArgs = "--keep-since 7d --keep-one";
+      };
     };
+    bat.enable = true;
+    fzf.enable = true;
+    ripgrep.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -25,7 +29,7 @@
     python315
     rustup
     go
-    deno
+    # deno
     jdk21
 
     # linters & formatters
@@ -35,12 +39,9 @@
     nixd
 
     # cli utilities
-    tree
-    bat
-    ripgrep
     prek
+    tree
     filetree
-    frida-tools
 
     # security & crypto
     gnupg
@@ -49,7 +50,6 @@
 
     # tools
     protobuf
-    llama-cpp
     ffmpeg
   ];
 
