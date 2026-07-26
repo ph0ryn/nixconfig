@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   user,
   osConfig,
@@ -18,7 +17,6 @@
     #./nixvim
   ];
 
-  # packages via programs wrapper
   programs.starship.enable = true;
   programs.fzf.enable = true;
   programs.nh = {
@@ -31,15 +29,14 @@
   };
 
   home.packages = with pkgs; [
-    # core
-    chezmoi
-
     # package managers
     uv
+    (pnpm_11.override { nodejs-slim = pkgs.nodejs-slim_26; })
     ni
 
     # runtimes
     bun
+    nodejs-slim_26
     python315
     rustup
     go
@@ -49,6 +46,9 @@
     # linters & formatters
     nixfmt
     treefmt
+    nil
+    nixd
+
     # cli utilities
     tree
     bat
@@ -69,19 +69,10 @@
     ffmpeg
   ];
 
-  xdg.configFile."chezmoi/chezmoi.toml".source = (pkgs.formats.toml { }).generate "chezmoi.toml" {
-    sourceDir = "~/chezmoi";
-    git = {
-      autoCommit = false;
-      autoPush = false;
-    };
-  };
-
   home.file = {
   };
 
   home.sessionVariables = {
-    # EDITOR = "emacs";
     JAVA_HOME = "${pkgs.jdk21}";
   };
 }
