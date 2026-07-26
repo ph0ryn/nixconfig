@@ -23,7 +23,6 @@
     casks = [
       "android-commandlinetools"
       "azookey"
-      "font-plemol-jp-nf"
       "ghostty"
       "macpacker"
       "mitmproxy"
