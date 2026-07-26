@@ -15,6 +15,9 @@
   };
 
   home.packages = with pkgs; [
+    # terminal
+    ghostty
+
     # desktop applications
     google-chrome
     zed-editor
