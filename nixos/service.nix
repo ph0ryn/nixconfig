@@ -5,11 +5,6 @@
 
     fstrim.enable = true;
 
-    displayManager.autoLogin = {
-      enable = true;
-      user = "ph0ryn";
-    };
-
     logind.settings.Login.IdleAction = "ignore";
 
     openssh = {
