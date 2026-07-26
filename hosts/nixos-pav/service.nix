@@ -26,7 +26,10 @@
 
     printing.enable = true;
 
-    tailscale.enable = true;
+    tailscale = {
+      enable = true;
+      extraSetFlags = [ "--hostname=NixPavilion" ];
+    };
 
     xserver.xkb = {
       layout = "jp";

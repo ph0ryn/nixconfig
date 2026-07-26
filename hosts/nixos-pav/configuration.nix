@@ -18,7 +18,7 @@
   };
 
   networking = {
-    hostName = "win";
+    hostName = "NixPavilion";
     networkmanager.enable = true;
   };
 

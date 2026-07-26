@@ -5,7 +5,7 @@ Personal Nix configuration for macOS and NixOS.
 ## Hosts
 
 - `AirPh0ryn`: Apple Silicon macOS managed with nix-darwin
-- `win`: x86_64 NixOS
+- `NixPavilion`: x86_64 NixOS
 
 ## Installation
 
@@ -33,10 +33,10 @@ chezmoi apply
 nix shell nixpkgs#git -c git clone https://github.com/ph0ryn/nixconfig.git ~/nixconfig
 
 # 2. test the configuration without making it the boot default
-sudo nixos-rebuild test --flake ~/nixconfig#win
+sudo nixos-rebuild test --flake ~/nixconfig#NixPavilion
 
 # 3. apply the configuration
-sudo nixos-rebuild switch --flake ~/nixconfig#win
+sudo nixos-rebuild switch --flake ~/nixconfig#NixPavilion
 ```
 
 ## Commands
@@ -64,5 +64,5 @@ sudo darwin-rebuild switch --flake ~/nixconfig#AirPh0ryn
 switch NixOS
 
 ```sh
-sudo nixos-rebuild switch --flake ~/nixconfig#win
+sudo nixos-rebuild switch --flake ~/nixconfig#NixPavilion
 ```

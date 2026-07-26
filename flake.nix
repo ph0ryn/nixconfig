@@ -89,7 +89,7 @@
         ];
       };
 
-      nixosConfigurations.win = nixpkgs-nixos.lib.nixosSystem {
+      nixosConfigurations.NixPavilion = nixpkgs-nixos.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
           inherit user;
