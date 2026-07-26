@@ -25,7 +25,7 @@
 
     # runtimes
     bun
-    nodejs-slim_26
+    nodejs_26
     python315
     rustup
     go
