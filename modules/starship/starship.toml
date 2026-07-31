@@ -1,7 +1,9 @@
 add_newline = false
 command_timeout = 1300
 format = """
-[](element1)\
+[](element0)\
+$hostname\
+[](fg:element0 bg:element1)\
 $username\
 [](fg:element1 bg:element2)\
 $directory\
@@ -49,6 +51,7 @@ use_os_path_sep = true
 
 [palettes]
 [palettes.prompt]
+element0 = "#6A4C93"
 element1 = "#9A348E"
 element2 = "#DA627D"
 element3 = "#FCA17D"
@@ -66,9 +69,15 @@ time_range = "-"
 use_12hr = false
 utc_time_offset = "local"
 
+[hostname]
+disabled = false
+format = "[ $hostname ]($style)"
+ssh_only = false
+style = "fg bg:element0"
+
 [username]
 disabled = false
-format = "[$user ]($style)"
+format = "[ $user ]($style)"
 show_always = true
 style_root = "fg bg:element1"
 style_user = "fg bg:element1"
