@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    ghq
     git
     git-filter-repo
-    ghq
+    prek
     keifu
   ];
 

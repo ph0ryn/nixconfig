@@ -12,9 +12,6 @@
         extraArgs = "--keep-since 7d --keep-one";
       };
     };
-    bat.enable = true;
-    fzf.enable = true;
-    ripgrep.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -37,11 +34,6 @@
     treefmt
     nil
     nixd
-
-    # cli utilities
-    prek
-    tree
-    filetree
 
     # security & crypto
     gnupg
