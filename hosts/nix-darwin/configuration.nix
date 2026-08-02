@@ -23,11 +23,10 @@
     config.allowUnfree = true;
   };
 
-  users.users.${user}.home = "/Users/${user}";
-
   security.pam.services.sudo_local.touchIdAuth = true;
+  programs.zsh.enable = true;
 
-  programs.zsh.enable = false;
+  users.users.${user}.home = "/Users/${user}";
 
   imports = [
     ./system.nix

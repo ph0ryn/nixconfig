@@ -5,6 +5,7 @@
   ...
 }:
 {
+  programs.zsh.enable = true;
   programs.home-manager.enable = true;
 
   home = {
@@ -20,6 +21,22 @@
     swiftlint
     swiftformat
   ];
+
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.local/share/pnpm/bin"
+    "$HOME/.cargo/bin"
+    "$ANDROID_HOME/platform-tools"
+    "$ANDROID_HOME/emulator"
+    "$HOME/.lmstudio/bin"
+    "$HOME/.orbstack/bin"
+  ];
+
+  home.sessionVariables = {
+    PNPM_HOME = "$HOME/.local/share/pnpm";
+    ANDROID_HOME = "/opt/homebrew/share/android-commandlinetools";
+    ANDROID_SDK_ROOT = "$ANDROID_HOME";
+  };
 
   xdg.configFile."chezmoi/chezmoi.toml".source = (pkgs.formats.toml { }).generate "chezmoi.toml" {
     sourceDir = "~/chezmoi";

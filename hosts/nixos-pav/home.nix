@@ -5,7 +5,7 @@
   ...
 }:
 {
-  programs.bash.enable = true;
+  programs.zsh.enable = true;
   programs.home-manager.enable = true;
 
   home = {
@@ -25,6 +25,7 @@
 
   home.sessionPath = [
     "$HOME/.local/share/pnpm/bin"
+    "$HOME/.cargo/bin"
   ];
 
   home.sessionVariables = {
