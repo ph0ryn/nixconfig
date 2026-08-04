@@ -24,7 +24,7 @@
     casks = [
       "android-commandlinetools"
       "azookey"
-      "ghostty"
+      "ghostty@tip"
       "macpacker"
       "mitmproxy"
       "orbstack"
