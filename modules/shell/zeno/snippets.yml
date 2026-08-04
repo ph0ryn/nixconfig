@@ -1,0 +1,8 @@
+snippets:
+  - name: git status
+    keyword: gs
+    snippet: git status --short --branch
+
+  - name: git amend
+    keyword: ga
+    snippet: git commit --amend --no-edit
