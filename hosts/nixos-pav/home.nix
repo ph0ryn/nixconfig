@@ -35,7 +35,7 @@
   imports = [
     ../../modules
     ../../modules/font.nix
-    ../../modules/shell.nix
+    ../../modules/shell
     ../../modules/starship
     ../../modules/git.nix
   ];
