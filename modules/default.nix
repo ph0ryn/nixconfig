@@ -26,7 +26,7 @@
     python315
     rustup
     go
-    # deno
+    deno
     jdk21
 
     # linters & formatters
