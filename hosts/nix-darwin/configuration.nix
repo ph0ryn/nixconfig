@@ -24,7 +24,11 @@
   };
 
   security.pam.services.sudo_local.touchIdAuth = true;
-  programs.zsh.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = false;
+  };
 
   users.users.${user}.home = "/Users/${user}";
 

@@ -5,13 +5,17 @@
   ...
 }:
 {
-  programs.zsh.enable = true;
   programs.home-manager.enable = true;
 
   home = {
     username = user;
     homeDirectory = osConfig.users.users.${user}.home;
     stateVersion = "25.11";
+  };
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
   };
 
   home.packages = with pkgs; [

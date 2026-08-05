@@ -45,7 +45,11 @@
 
   hardware.bluetooth.enable = true;
   security.rtkit.enable = true;
-  programs.zsh.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = false;
+  };
 
   users.users.${user} = {
     isNormalUser = true;
