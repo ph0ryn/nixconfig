@@ -7,6 +7,32 @@
 {
   programs.home-manager.enable = true;
 
+  programs.nh = {
+    enable = true;
+  };
+
+  launchd.agents.nh-clean = {
+    enable = true;
+    config = {
+      ProgramArguments = [
+        "${pkgs.nh}/bin/nh"
+        "clean"
+        "user"
+        "--keep-since"
+        "7d"
+        "--keep-one"
+        "--no-gc"
+      ];
+      StartCalendarInterval = [
+        {
+          Weekday = 7;
+          Hour = 3;
+          Minute = 0;
+        }
+      ];
+    };
+  };
+
   home = {
     username = user;
     homeDirectory = osConfig.users.users.${user}.home;

@@ -12,6 +12,10 @@
 
   nix = {
     enable = true;
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 7d";
+    };
     settings = {
       experimental-features = [
         "nix-command"

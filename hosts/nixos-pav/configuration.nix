@@ -46,9 +46,19 @@
   hardware.bluetooth.enable = true;
   security.rtkit.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = false;
+  programs = {
+    nh = {
+      enable = true;
+      clean = {
+        enable = true;
+        dates = "weekly";
+        extraArgs = "--keep-since 7d --keep-one";
+      };
+    };
+    zsh = {
+      enable = true;
+      enableCompletion = false;
+    };
   };
 
   users.users.${user} = {
