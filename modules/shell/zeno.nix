@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   zenoSource = pkgs.fetchFromGitHub {
     owner = "yuki-yano";
@@ -23,6 +28,9 @@ in
     zsh = {
       initContent = ''
         export ZENO_ROOT="${zenoHome}"
+        ${lib.optionalString pkgs.stdenv.hostPlatform.isLinux ''
+          export DENO_SQLITE_PATH="${pkgs.sqlite.out}/lib/libsqlite3.so"
+        ''}
         source "${zenoHome}/zeno-bootstrap.zsh"
         zeno-bind-default-keys --lazy
         zsh-defer zeno-preload
