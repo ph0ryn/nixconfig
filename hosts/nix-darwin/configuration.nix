@@ -11,12 +11,16 @@
   };
 
   nix = {
-    enable = false;
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+    enable = true;
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+    };
   };
+
+  services.nix-daemon.logFile = "/var/log/nix-daemon.log";
 
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
