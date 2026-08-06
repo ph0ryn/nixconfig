@@ -1,83 +1,198 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 add_newline = false
 command_timeout = 1300
 format = """
-[](element0)\
+[](red)\
+$os\
 $hostname\
-[](fg:element0 bg:element1)\
 $username\
-[](fg:element1 bg:element2)\
+[](bg:peach fg:red)\
 $directory\
-[](fg:element2 bg:element3)\
+[](bg:yellow fg:peach)\
+$git_branch$git_status\
+[](fg:yellow bg:green)\
+$c$rust$golang$nodejs$bun$php$java$kotlin$haskell$python\
+[](fg:green bg:sapphire)\
+$nix_shell\
+[](fg:sapphire bg:lavender)\
 $time\
-[](fg:element3 bg:element4)\
-[](fg:element4 bg:element5)\
-[](fg:element5 bg:element6)\
+[ ](fg:lavender)\
 $cmd_duration\
-[](fg:element6) \
-$nix_shell$nodejs$lua$golang$rust$php$git_branch$git_commit$git_state$git_status$sudo\
+$sudo\
 $line_break\
-$jobs$status$container$character\
-"""
-palette = "prompt"
+$character"""
+palette = "catppuccin_frappe"
 scan_timeout = 50
 
-[character]
-error_symbol = "[✗](bold red) "
-success_symbol = "[](bold green) "
-
-[cmd_duration]
+[os]
 disabled = false
-format = "[ $duration ]($style)"
-min_time = 2000
-min_time_to_notify = 5000
-show_milliseconds = true
-show_notifications = false
-style = "fg bg:element6"
+style = "bg:red fg:crust"
 
-[directory]
-disabled = false
-fish_style_pwd_dir_length = 0
-format = "[ $path ]($style)[$read_only]($read_only_style)"
-home_symbol = "~"
-read_only = "🔒"
-read_only_style = "red"
-repo_root_format = "[ $before_root_path ]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)"
-style = "fg bg:element2"
-truncate_to_repo = true
-truncation_length = 3
-truncation_symbol = ".../"
-use_logical_path = true
-use_os_path_sep = true
-
-[palettes]
-[palettes.prompt]
-element0 = "#6A4C93"
-element1 = "#9A348E"
-element2 = "#DA627D"
-element3 = "#FCA17D"
-element4 = "#86BBD8"
-element5 = "#33658A"
-element6 = "#06969A"
-fg = "#F4F4F4"
-
-[time]
-disabled = false
-format = "[ $time ]($style)"
-style = "fg bg:element3"
-time_format = "%T"
-time_range = "-"
-use_12hr = false
-utc_time_offset = "local"
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
 
 [hostname]
 disabled = false
 format = "[ $hostname ]($style)"
-ssh_only = false
-style = "fg bg:element0"
+ssh_only = true
+style = "bg:red fg:crust"
 
 [username]
-disabled = false
-format = "[ $user ]($style)"
 show_always = true
-style_root = "fg bg:element1"
-style_user = "fg bg:element1"
+style_user = "bg:red fg:crust"
+style_root = "bg:red fg:crust"
+format = "[ $user]($style)"
+
+[directory]
+style = "bg:peach fg:crust"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+Documents = "󰈙 "
+Downloads = " "
+Music = "󰝚 "
+Pictures = " "
+Developer = "󰲋 "
+
+[nodejs]
+symbol = ""
+style = "bg:green"
+format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)"
+
+[bun]
+symbol = ""
+style = "bg:green"
+format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)"
+
+[c]
+symbol = " "
+style = "bg:green"
+format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)"
+
+[rust]
+symbol = ""
+style = "bg:green"
+format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)"
+
+[golang]
+symbol = ""
+style = "bg:green"
+format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)"
+
+[php]
+symbol = ""
+style = "bg:green"
+format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)"
+
+[java]
+symbol = " "
+style = "bg:green"
+format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)"
+
+[kotlin]
+symbol = ""
+style = "bg:green"
+format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)"
+
+[haskell]
+symbol = ""
+style = "bg:green"
+format = "[[ $symbol( $version) ](fg:crust bg:green)]($style)"
+
+[python]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
+
+[nix_shell]
+style = "bg:sapphire"
+format = '[[ $symbol$state( \($name\)) ](fg:crust bg:sapphire)]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:yellow"
+format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
+
+[git_status]
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:lavender"
+format = "[[  $time ](fg:crust bg:lavender)]($style)"
+
+[line_break]
+disabled = false
+
+[sudo]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = "[❯](bold fg:green)"
+error_symbol = "[❯](bold fg:red)"
+vimcmd_symbol = "[❮](bold fg:green)"
+vimcmd_replace_one_symbol = "[❮](bold fg:lavender)"
+vimcmd_replace_symbol = "[❮](bold fg:lavender)"
+vimcmd_visual_symbol = "[❮](bold fg:yellow)"
+
+[cmd_duration]
+show_milliseconds = true
+format = " in $duration "
+style = "bg:lavender"
+disabled = false
+show_notifications = false
+min_time = 2000
+min_time_to_notify = 5000
+
+[palettes.catppuccin_frappe]
+rosewater = "#f2d5cf"
+flamingo = "#eebebe"
+pink = "#f4b8e4"
+mauve = "#ca9ee6"
+red = "#e78284"
+maroon = "#ea999c"
+peach = "#ef9f76"
+yellow = "#e5c890"
+green = "#a6d189"
+teal = "#81c8be"
+sky = "#99d1db"
+sapphire = "#85c1dc"
+blue = "#8caaee"
+lavender = "#babbf1"
+text = "#c6d0f5"
+subtext1 = "#b5bfe2"
+subtext0 = "#a5adce"
+overlay2 = "#949cbb"
+overlay1 = "#838ba7"
+overlay0 = "#737994"
+surface2 = "#626880"
+surface1 = "#51576d"
+surface0 = "#414559"
+base = "#303446"
+mantle = "#292c3c"
+crust = "#232634"
