@@ -56,6 +56,15 @@
     };
   };
 
+  xdg.configFile."keifu/config.toml".source = (pkgs.formats.toml { }).generate "keifu-config.toml" {
+    refresh = {
+      auto_refresh = true;
+      refresh_interval = 10;
+      auto_fetch = true;
+      fetch_interval = 120;
+    };
+  };
+
   home.packages = with pkgs; [
     ghq
     git-filter-repo
