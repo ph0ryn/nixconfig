@@ -35,6 +35,16 @@
   ];
 
   home.file = {
+    ".nirc" = {
+      text = ''
+        ; fallback when no lock found
+        defaultAgent=pnpm
+
+        ; for global installs
+        globalAgent=pnpm
+
+      '';
+    };
   };
 
   home.sessionVariables = {
