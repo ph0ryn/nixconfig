@@ -28,6 +28,7 @@
   };
 
   imports = [
+    ./functions
     ./zeno.nix
   ];
 }

@@ -6,3 +6,11 @@ snippets:
   - name: git amend
     keyword: ga
     snippet: git commit --amend --no-edit
+
+  - name: pnpm version
+    keyword: pv
+    snippet: "pnpm version '${1:-patch}' -m 'chore(release): bump version to v%s'"
+
+  - name: generate commit message
+    keyword: gcm
+    snippet: generate-commit-message
