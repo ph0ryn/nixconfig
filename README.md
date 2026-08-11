@@ -20,10 +20,6 @@ git clone https://github.com/ph0ryn/nixconfig.git ~/nixconfig
 
 # 3. bootstrap nix-darwin
 sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/nixconfig#AirPh0ryn
-
-# 4. optional chezmoi
-git clone https://github.com/ph0ryn/chezmoi-dotfiles.git ~/chezmoi
-chezmoi apply
 ```
 
 ### NixOS

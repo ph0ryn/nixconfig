@@ -45,9 +45,6 @@
   };
 
   home.packages = with pkgs; [
-    # core
-    chezmoi
-
     swiftlint
     swiftformat
   ];
@@ -62,14 +59,6 @@
   home.sessionVariables = {
     ANDROID_HOME = "/opt/homebrew/share/android-commandlinetools";
     ANDROID_SDK_ROOT = "$ANDROID_HOME";
-  };
-
-  xdg.configFile."chezmoi/chezmoi.toml".source = (pkgs.formats.toml { }).generate "chezmoi.toml" {
-    sourceDir = "~/chezmoi";
-    git = {
-      autoCommit = false;
-      autoPush = false;
-    };
   };
 
   imports = [
