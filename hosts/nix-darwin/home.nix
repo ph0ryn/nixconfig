@@ -69,6 +69,7 @@
     ../../modules/shell
     ../../modules/starship
     ../../modules/git.nix
+    ../../modules/zed.nix
     ../../modules/mongodb.nix
   ];
 }

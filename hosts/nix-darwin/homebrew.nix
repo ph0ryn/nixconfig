@@ -31,7 +31,6 @@
       "raycast"
       "reqable"
       "slack"
-      "zed"
     ];
   };
 }

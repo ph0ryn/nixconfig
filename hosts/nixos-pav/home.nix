@@ -24,7 +24,6 @@
 
     # desktop applications
     google-chrome
-    zed-editor
   ];
 
   home.sessionPath = [
@@ -39,5 +38,6 @@
     ../../modules/shell
     ../../modules/starship
     ../../modules/git.nix
+    ../../modules/zed.nix
   ];
 }
