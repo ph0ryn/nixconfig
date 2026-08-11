@@ -42,9 +42,7 @@ nix flake update
 
 # selected inputs
 nix flake update nixpkgs
-nix flake update nixpkgs-nixos
 nix flake update home-manager
-nix flake update home-manager-nixos
 nix flake update nix-darwin
 ```
 

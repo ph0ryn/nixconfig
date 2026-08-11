@@ -16,9 +16,10 @@ repos:
         name: nix-flake-check
         entry: nix flake check
         language: system
-        files: ^flake.nix$
+        files: \.nix$
+        pass_filenames: false
       - id: nix-fmt
         name: nix-fmt
         entry: treefmt
         language: system
-        files: .nix$
+        files: \.nix$
