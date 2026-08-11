@@ -31,6 +31,13 @@
     config.allowUnfree = true;
   };
 
+  networking = {
+    computerName = "AirPh0ryn";
+    localHostName = "AirPh0ryn";
+  };
+
+  time.timeZone = "Asia/Tokyo";
+
   security.pam.services.sudo_local.touchIdAuth = true;
 
   programs.zsh = {
