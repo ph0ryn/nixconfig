@@ -30,8 +30,9 @@
     openssl
 
     # tools
-    protobuf
     ffmpeg
+    mitmproxy
+    protobuf
   ];
 
   home.file = {

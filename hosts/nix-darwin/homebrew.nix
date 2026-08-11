@@ -16,20 +16,21 @@
 
     brews = [
       "duti"
-      "jadx"
-      "node@26"
       "python@3.14"
     ];
 
     casks = [
       "android-commandlinetools"
       "azookey"
+      "discord"
       "ghostty@tip"
+      "google-chrome"
+      "lm-studio"
       "macpacker"
-      "mitmproxy"
       "orbstack"
       "raycast"
       "reqable"
+      "slack"
       "zed"
     ];
   };

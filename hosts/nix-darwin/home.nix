@@ -47,6 +47,8 @@
   home.packages = with pkgs; [
     swiftlint
     swiftformat
+
+    jadx
   ];
 
   home.sessionPath = [
