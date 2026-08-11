@@ -47,7 +47,14 @@
     };
   };
 
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.local/share/pnpm/bin"
+    "$HOME/.cargo/bin"
+  ];
+
   home.sessionVariables = {
+    PNPM_HOME = "$HOME/.local/share/pnpm";
     JAVA_HOME = "${pkgs.jdk21}";
   };
 }

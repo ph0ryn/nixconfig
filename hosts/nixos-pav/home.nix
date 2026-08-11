@@ -28,12 +28,9 @@
   ];
 
   home.sessionPath = [
-    "$HOME/.local/share/pnpm/bin"
-    "$HOME/.cargo/bin"
   ];
 
   home.sessionVariables = {
-    PNPM_HOME = "$HOME/.local/share/pnpm";
   };
 
   imports = [

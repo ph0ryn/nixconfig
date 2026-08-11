@@ -53,9 +53,6 @@
   ];
 
   home.sessionPath = [
-    "$HOME/.local/bin"
-    "$HOME/.local/share/pnpm/bin"
-    "$HOME/.cargo/bin"
     "$ANDROID_HOME/platform-tools"
     "$ANDROID_HOME/emulator"
     "$HOME/.lmstudio/bin"
@@ -63,7 +60,6 @@
   ];
 
   home.sessionVariables = {
-    PNPM_HOME = "$HOME/.local/share/pnpm";
     ANDROID_HOME = "/opt/homebrew/share/android-commandlinetools";
     ANDROID_SDK_ROOT = "$ANDROID_HOME";
   };
