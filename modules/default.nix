@@ -21,8 +21,6 @@
     # linters & formatters
     nixfmt
     treefmt
-    nil
-    nixd
 
     # security & crypto
     gnupg
