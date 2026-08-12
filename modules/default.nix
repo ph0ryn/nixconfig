@@ -29,6 +29,7 @@
 
     # tools
     ffmpeg
+    indexion
     mitmproxy
     protobuf
   ];

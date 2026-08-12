@@ -135,6 +135,26 @@
         "type": "github"
       }
     },
+    "indexion-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786556828,
+        "narHash": "sha256-C4ha4YXtJmixb9xWlrFYjalRpF6HvYa0YqqbDa4qsOY=",
+        "owner": "ph0ryn",
+        "repo": "indexion-nix",
+        "rev": "46e0693876b9b6427439c62be0af8af767cb3f61",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ph0ryn",
+        "repo": "indexion-nix",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -225,6 +245,7 @@
         "gh-fzf-get": "gh-fzf-get",
         "gh-license": "gh-license",
         "home-manager": "home-manager",
+        "indexion-nix": "indexion-nix",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs"

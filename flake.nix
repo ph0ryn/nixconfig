@@ -31,6 +31,10 @@
       url = "github:ph0ryn/filetree-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    indexion-nix = {
+      url = "github:ph0ryn/indexion-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -43,6 +47,7 @@
       gh-fzf-get,
       gh-license,
       filetree-nix,
+      indexion-nix,
       # nixvim,
       ...
     }:
@@ -77,6 +82,7 @@
               gh-fzf-get.overlays.default
               gh-license.overlays.default
               filetree-nix.overlays.default
+              indexion-nix.overlays.default
             ];
           }
         ];
@@ -104,6 +110,7 @@
               gh-fzf-get.overlays.default
               gh-license.overlays.default
               filetree-nix.overlays.default
+              indexion-nix.overlays.default
             ];
           }
         ];
