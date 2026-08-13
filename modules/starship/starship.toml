@@ -19,7 +19,6 @@ $nix_shell\
 $time\
 [ ](fg:lavender)\
 $cmd_duration\
-$sudo\
 $line_break\
 $character"""
 palette = "catppuccin_frappe"
@@ -146,9 +145,6 @@ style = "bg:lavender"
 format = "[[  $time ](fg:crust bg:lavender)]($style)"
 
 [line_break]
-disabled = false
-
-[sudo]
 disabled = false
 
 [character]
