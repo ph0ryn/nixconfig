@@ -1,8 +1,5 @@
 {
   services = {
-    desktopManager.cosmic.enable = true;
-    displayManager.cosmic-greeter.enable = true;
-
     fstrim.enable = true;
 
     logind.settings.Login.IdleAction = "ignore";

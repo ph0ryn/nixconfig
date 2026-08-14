@@ -75,6 +75,7 @@
   };
 
   imports = [
+    ./desktop.nix
     ./hardware-configuration.nix
     ./system.nix
     ./service.nix
