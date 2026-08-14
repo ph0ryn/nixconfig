@@ -76,6 +76,27 @@ in
       "Print" = "screenshot";
     }
     // {
+      "Henkan_Mode" = {
+        _props = {
+          allow-inhibiting = false;
+          repeat = false;
+        };
+        spawn = [
+          "fcitx5-remote"
+          "-o"
+        ];
+      };
+      "Muhenkan" = {
+        _props = {
+          allow-inhibiting = false;
+          repeat = false;
+        };
+        spawn = [
+          "fcitx5-remote"
+          "-c"
+        ];
+      };
+
       "Mod+Ctrl+Shift+WheelScrollDown" = action "move-column-right";
       "Mod+Ctrl+Shift+WheelScrollUp" = action "move-column-left";
 
