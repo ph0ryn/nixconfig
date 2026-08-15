@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "beankey": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786815791,
+        "narHash": "sha256-+amN3Dp0joQcd+//ApfE8Qash3wwf1m2j4dbZvyUGEs=",
+        "ref": "main",
+        "rev": "4bd61894a4c0dd74c1a02c13e847b5a3458f2520",
+        "revCount": 116,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/ph0ryn/beankey.git"
+      },
+      "original": {
+        "ref": "main",
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/ph0ryn/beankey.git"
+      }
+    },
     "brew-src": {
       "flake": false,
       "locked": {
@@ -241,6 +264,7 @@
     },
     "root": {
       "inputs": {
+        "beankey": "beankey",
         "filetree-nix": "filetree-nix",
         "gh-fzf-get": "gh-fzf-get",
         "gh-license": "gh-license",

@@ -35,6 +35,10 @@
       url = "github:ph0ryn/indexion-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    beankey = {
+      url = "git+https://github.com/ph0ryn/beankey.git?ref=main&submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -48,6 +52,7 @@
       gh-license,
       filetree-nix,
       indexion-nix,
+      beankey,
       # nixvim,
       ...
     }:
@@ -96,6 +101,7 @@
         modules = [
           ./hosts/nixos-pav/configuration.nix
           home-manager.nixosModules.home-manager
+          beankey.nixosModules.default
           {
             home-manager = {
               useGlobalPkgs = true;
