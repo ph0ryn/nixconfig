@@ -142,11 +142,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786556828,
-        "narHash": "sha256-C4ha4YXtJmixb9xWlrFYjalRpF6HvYa0YqqbDa4qsOY=",
+        "lastModified": 1786762290,
+        "narHash": "sha256-J6C3dcI7ntTm9UyR8V/b/6x/ky7Xh8w/NqNWvH7zsvo=",
         "owner": "ph0ryn",
         "repo": "indexion-nix",
-        "rev": "46e0693876b9b6427439c62be0af8af767cb3f61",
+        "rev": "f84447b54cf96d09a5286276db247d7de5be57d3",
         "type": "github"
       },
       "original": {
