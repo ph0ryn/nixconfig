@@ -13,6 +13,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    nix-secure-enclave-key = {
+      url = "github:ryoppippi/nix-secure-enclave-key";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # nixvim = {
     #   url = "github:nix-community/nixvim";
@@ -48,6 +52,7 @@
       home-manager,
       nix-darwin,
       nix-homebrew,
+      nix-secure-enclave-key,
       gh-fzf-get,
       gh-license,
       filetree-nix,
@@ -78,7 +83,10 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               backupFileExtension = "hm-backup";
-              extraSpecialArgs = { inherit user; };
+              extraSpecialArgs = {
+                inherit user;
+                nixSecureEnclaveKey = nix-secure-enclave-key;
+              };
               users.${user} = import ./hosts/nix-darwin/home.nix;
             };
           }

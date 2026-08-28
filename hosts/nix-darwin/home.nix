@@ -39,9 +39,12 @@
     stateVersion = "25.11";
   };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
+  programs = {
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+    };
+    git.includes = [ { path = "~/.gitconfig.local"; } ];
   };
 
   home.packages = with pkgs; [
@@ -69,6 +72,7 @@
     ../../modules/shell
     ../../modules/starship
     ../../modules/git.nix
+    ./secure-enclave-key.nix
     ../../modules/zed.nix
     ../../modules/mongodb.nix
   ];

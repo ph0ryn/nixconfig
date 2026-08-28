@@ -6,6 +6,10 @@
       settings = {
         init.defaultBranch = "main";
         push.followTags = true;
+        user = {
+          name = "ph0ryn";
+          email = "208665755+ph0ryn@users.noreply.github.com";
+        };
       };
       ignores = [
         ".DS_Store"
@@ -21,6 +25,7 @@
         "node_modules/"
       ];
     };
+
     gh = {
       enable = true;
       extensions = [
