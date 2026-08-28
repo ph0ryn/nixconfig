@@ -23,6 +23,7 @@
       "android-commandlinetools"
       "azookey"
       "discord"
+      "finetune"
       "ghostty@tip"
       "google-chrome"
       "lm-studio"
