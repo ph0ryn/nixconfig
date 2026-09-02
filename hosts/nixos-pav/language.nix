@@ -1,4 +1,4 @@
-{ ... }:
+{ user, ... }:
 {
   programs.beankey = {
     enable = true;
@@ -54,6 +54,29 @@
         };
         waylandFrontend = true;
       };
+    };
+  };
+
+  home-manager.users.${user}.wayland.windowManager.niri.settings.binds = {
+    "Henkan_Mode" = {
+      _props = {
+        allow-inhibiting = false;
+        repeat = false;
+      };
+      spawn = [
+        "fcitx5-remote"
+        "-o"
+      ];
+    };
+    "Muhenkan" = {
+      _props = {
+        allow-inhibiting = false;
+        repeat = false;
+      };
+      spawn = [
+        "fcitx5-remote"
+        "-c"
+      ];
     };
   };
 }
