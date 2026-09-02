@@ -39,6 +39,11 @@
     stateVersion = "25.11";
   };
 
+  targets.darwin = {
+    copyApps.enable = false;
+    linkApps.enable = true;
+  };
+
   programs = {
     zsh = {
       enable = true;

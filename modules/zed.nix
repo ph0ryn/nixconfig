@@ -139,4 +139,6 @@
       vim_mode = false;
     };
   };
+
+  home.shellAliases.zed = "zeditor";
 }
