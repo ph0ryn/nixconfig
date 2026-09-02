@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     # package managers
     uv
-    (pnpm_11.override { nodejs-slim = pkgs.nodejs-slim_26; })
+    pnpm_11
     ni
 
     # runtimes
