@@ -17,6 +17,7 @@
       "html"
       "iwe"
       "macos-classic"
+      "moonbit"
       "nix"
       "oxc"
       "proto"
@@ -41,7 +42,10 @@
         disabled_globs = [ ];
         provider = "copilot";
       };
-      file_types.javascript = [ "*.gs" ];
+      file_types = {
+        javascript = [ "*.gs" ];
+        MoonBit = [ "moon.pkg" ];
+      };
       git_panel = {
         dock = "right";
         file_icons = false;
@@ -92,6 +96,13 @@
       };
       line_ending = "enforce_lf";
       lsp = {
+        moonbit.binary = {
+          path = "${pkgs.moonbit-bin.moonbit.latest}/bin/moon";
+          arguments = [
+            "lsp"
+            "--stdio"
+          ];
+        };
         oxfmt.initialization_options.settings.run = "onSave";
         oxlint.initialization_options.settings = {
           fixKind = "safe_fix";
