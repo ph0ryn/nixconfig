@@ -16,6 +16,7 @@
     rustup
     go
     deno
+    moonbit-bin.moonbit.latest
     jdk21
 
     # linters & formatters

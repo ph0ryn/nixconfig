@@ -17,6 +17,10 @@
       url = "github:ryoppippi/nix-secure-enclave-key";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    moonbit-overlay = {
+      url = "github:moonbit-community/moonbit-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # nixvim = {
     #   url = "github:nix-community/nixvim";
@@ -57,6 +61,7 @@
       gh-license,
       filetree-nix,
       indexion-nix,
+      moonbit-overlay,
       beankey,
       # nixvim,
       ...
@@ -96,6 +101,7 @@
               gh-license.overlays.default
               filetree-nix.overlays.default
               indexion-nix.overlays.default
+              moonbit-overlay.overlays.default
             ];
           }
         ];
@@ -125,6 +131,7 @@
               gh-license.overlays.default
               filetree-nix.overlays.default
               indexion-nix.overlays.default
+              moonbit-overlay.overlays.default
             ];
           }
         ];

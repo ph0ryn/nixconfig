@@ -196,6 +196,27 @@
         "type": "github"
       }
     },
+    "moonbit-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": "treefmt-nix"
+      },
+      "locked": {
+        "lastModified": 1788418837,
+        "narHash": "sha256-ZC5LqWy+V4sEDqeawwLuVFMURAH+xkbhcpgtacQI31M=",
+        "owner": "moonbit-community",
+        "repo": "moonbit-overlay",
+        "rev": "1dc0a2e62cd843767b09ac6f9877369a49c8fa04",
+        "type": "github"
+      },
+      "original": {
+        "owner": "moonbit-community",
+        "repo": "moonbit-overlay",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -324,10 +345,32 @@
         "gh-license": "gh-license",
         "home-manager": "home-manager",
         "indexion-nix": "indexion-nix",
+        "moonbit-overlay": "moonbit-overlay",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nix-secure-enclave-key": "nix-secure-enclave-key",
         "nixpkgs": "nixpkgs"
+      }
+    },
+    "treefmt-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "moonbit-overlay",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786901030,
+        "narHash": "sha256-WSFCsDSE5ffgD2MqzkM2CYjeFiKhRF/dJUN8uedb6YE=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "27b3b12a8e6375f28ebe122f07d230ca5459bbfa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
       }
     }
   },
