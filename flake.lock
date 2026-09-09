@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "ankerscale": {
+      "inputs": {
+        "moonbit-overlay": [
+          "moonbit-overlay"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788936945,
+        "narHash": "sha256-4NEEBjAu4jjDtrmbpAedPUPnX2gcwaeaC2+s7bPBXPs=",
+        "owner": "ph0ryn",
+        "repo": "AnkerScale",
+        "rev": "f932d14de7738ecc264b9f3f5f7b242b16ca6266",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ph0ryn",
+        "repo": "AnkerScale",
+        "type": "github"
+      }
+    },
     "beankey": {
       "inputs": {
         "nixpkgs": [
@@ -339,6 +362,7 @@
     },
     "root": {
       "inputs": {
+        "ankerscale": "ankerscale",
         "beankey": "beankey",
         "filetree-nix": "filetree-nix",
         "gh-fzf-get": "gh-fzf-get",

@@ -21,6 +21,11 @@
       url = "github:moonbit-community/moonbit-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ankerscale = {
+      url = "github:ph0ryn/AnkerScale";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.moonbit-overlay.follows = "moonbit-overlay";
+    };
 
     # nixvim = {
     #   url = "github:nix-community/nixvim";
@@ -63,6 +68,7 @@
       indexion-nix,
       moonbit-overlay,
       beankey,
+      ankerscale,
       # nixvim,
       ...
     }:
@@ -102,6 +108,7 @@
               filetree-nix.overlays.default
               indexion-nix.overlays.default
               moonbit-overlay.overlays.default
+              ankerscale.overlays.default
             ];
           }
         ];

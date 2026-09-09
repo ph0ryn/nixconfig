@@ -53,10 +53,12 @@
   };
 
   home.packages = with pkgs; [
-    swiftlint
-    swiftformat
+    ankerscale
 
     jadx
+
+    swiftlint
+    swiftformat
   ];
 
   home.sessionPath = [
