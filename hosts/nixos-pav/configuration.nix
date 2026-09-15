@@ -51,7 +51,7 @@
     description = "ph0ryn";
     shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
-      "sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBBfjUwhrps3u+xU00i7qmAGDUmyOLdgF1+mPV2L1I8+/B0EXWqkbAQQC1PJq/NhURT0rprNENMclkEKTSdJYNNoAAAAEc3NoOg== ssh:"
+      "sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBAq+k3fZxrDgT8oKHHTcTNVkA9zlOh+yoKYd19cwEBsYEFBj4UAukzjaEPy3ee5cpuENr77rzusGA6BEtnhHp00AAAAEc3NoOg== ssh:"
     ];
     extraGroups = [
       "networkmanager"
