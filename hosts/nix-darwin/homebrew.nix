@@ -29,7 +29,6 @@
       "lm-studio"
       "macpacker"
       "orbstack"
-      "raycast"
       "reqable"
       "slack"
     ];

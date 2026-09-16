@@ -1,6 +1,13 @@
 {
   description = "Home Manager configuration of ph0ryn";
 
+  nixConfig = {
+    extra-substituters = [ "https://vicinae.cachix.org" ];
+    extra-trusted-public-keys = [
+      "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
@@ -21,11 +28,7 @@
       url = "github:moonbit-community/moonbit-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ankerscale = {
-      url = "github:ph0ryn/AnkerScale";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.moonbit-overlay.follows = "moonbit-overlay";
-    };
+    vicinae.url = "github:vicinaehq/vicinae";
 
     # nixvim = {
     #   url = "github:nix-community/nixvim";
@@ -52,6 +55,11 @@
       url = "git+https://github.com/ph0ryn/beankey.git?ref=main&submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ankerscale = {
+      url = "github:ph0ryn/AnkerScale";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.moonbit-overlay.follows = "moonbit-overlay";
+    };
   };
 
   outputs =
@@ -69,6 +77,7 @@
       moonbit-overlay,
       beankey,
       ankerscale,
+      vicinae,
       # nixvim,
       ...
     }:
@@ -98,6 +107,7 @@
                 inherit user;
                 nixSecureEnclaveKey = nix-secure-enclave-key;
               };
+              sharedModules = [ vicinae.homeManagerModules.default ];
               users.${user} = import ./hosts/nix-darwin/home.nix;
             };
           }

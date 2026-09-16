@@ -82,5 +82,6 @@
     ./secure-enclave-key.nix
     ../../modules/zed.nix
     ../../modules/mongodb.nix
+    ../../modules/vicinae.nix
   ];
 }
