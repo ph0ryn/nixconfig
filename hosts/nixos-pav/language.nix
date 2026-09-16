@@ -1,8 +1,8 @@
 { user, ... }:
 {
-  programs.beankey = {
+  programs.beanKey = {
     enable = true;
-    useBeankeyTheme = true;
+    useBeanKeyTheme = true;
 
     conversion = {
       typeBackslash = false;

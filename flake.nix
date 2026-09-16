@@ -52,7 +52,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     beankey = {
-      url = "git+https://github.com/ph0ryn/beankey.git?ref=main&submodules=1";
+      url = "github:ph0ryn/beanKey";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ankerscale = {

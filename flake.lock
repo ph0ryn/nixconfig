@@ -30,20 +30,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1786815791,
-        "narHash": "sha256-+amN3Dp0joQcd+//ApfE8Qash3wwf1m2j4dbZvyUGEs=",
-        "ref": "main",
-        "rev": "4bd61894a4c0dd74c1a02c13e847b5a3458f2520",
-        "revCount": 116,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/ph0ryn/beankey.git"
+        "lastModified": 1789581200,
+        "narHash": "sha256-ZtCO9ZBepR2+Pb5q1BxsmwDRDS1zhWZ87R2PhOZ4MbE=",
+        "owner": "ph0ryn",
+        "repo": "beanKey",
+        "rev": "9db9b9c880e464043708d5453840d3fbf48c0dea",
+        "type": "github"
       },
       "original": {
-        "ref": "main",
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/ph0ryn/beankey.git"
+        "owner": "ph0ryn",
+        "repo": "beanKey",
+        "type": "github"
       }
     },
     "brew-src": {
