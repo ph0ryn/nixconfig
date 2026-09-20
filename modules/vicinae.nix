@@ -12,12 +12,18 @@
       pop_to_root_on_close = true;
       favicon_service = "twenty";
       search_files_in_root = true;
+
+      tray = {
+        enabled = false;
+      };
+
       font = {
         normal = {
           size = 12;
           family = "Maple Nerd Font";
         };
       };
+
       theme = {
         light = {
           name = "vicinae-light";
@@ -28,6 +34,7 @@
           icon_theme = "default";
         };
       };
+
       launcher_window = {
         opacity = 0.40;
         material = "liquid_glass";
