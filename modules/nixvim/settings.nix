@@ -10,7 +10,7 @@
       transparent_enabled = true;
     };
 
-    colorschemes.catppuccin.enable = true;
+    plugins.lazy.enable = true;
 
     nixpkgs.useGlobalPackages = true;
   };

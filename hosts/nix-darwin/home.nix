@@ -82,6 +82,7 @@
     ../../modules/git.nix
     ./secure-enclave-key.nix
     ../../modules/zed.nix
+    ../../modules/nixvim
     ../../modules/mongodb.nix
     ../../modules/vicinae.nix
   ];

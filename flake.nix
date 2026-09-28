@@ -33,11 +33,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vicinae.url = "github:vicinaehq/vicinae";
-
-    # nixvim = {
-    #   url = "github:nix-community/nixvim";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     gh-fzf-get = {
       url = "github:ph0ryn/gh-fzf-get";
@@ -81,7 +80,7 @@
       beankey,
       ankerscale,
       vicinae,
-      # nixvim,
+      nixvim,
       ...
     }:
     let
@@ -94,7 +93,6 @@
             self
             user
             nix-homebrew
-            # nixvim
             ;
         };
         modules = [
@@ -107,7 +105,7 @@
               useUserPackages = true;
               backupFileExtension = "hm-backup";
               extraSpecialArgs = {
-                inherit user;
+                inherit user nixvim;
                 nixSecureEnclaveKey = nix-secure-enclave-key;
               };
               sharedModules = [

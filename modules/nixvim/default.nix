@@ -9,6 +9,7 @@
     ./opts.nix
     ./lsp.nix
     ./plugins.nix
-    ./extra.nix
   ];
+
+  programs.nixvim.extraConfigLua = builtins.readFile ./extraConfig.lua;
 }
