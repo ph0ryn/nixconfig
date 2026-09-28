@@ -38,6 +38,7 @@
       colorize_brackets = false;
       cursor_shape = "bar";
       diff_view_style = "split";
+      disable_ai = true;
       edit_predictions = {
         disabled_globs = [ ];
         provider = "copilot";
