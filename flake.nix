@@ -2,8 +2,12 @@
   description = "Home Manager configuration of ph0ryn";
 
   nixConfig = {
-    extra-substituters = [ "https://vicinae.cachix.org" ];
+    extra-substituters = [
+      "https://beankey.cachix.org"
+      "https://vicinae.cachix.org"
+    ];
     extra-trusted-public-keys = [
+      "beankey.cachix.org-1:iE4tWJfPogk+oWopayLECdSsw+H1vqsVnMvmRPHSQ6k="
       "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
     ];
   };
@@ -53,7 +57,6 @@
     };
     beankey = {
       url = "github:ph0ryn/beanKey";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     ankerscale = {
       url = "github:ph0ryn/AnkerScale";
@@ -107,7 +110,10 @@
                 inherit user;
                 nixSecureEnclaveKey = nix-secure-enclave-key;
               };
-              sharedModules = [ vicinae.homeManagerModules.default ];
+              sharedModules = [
+                beankey.homeModules.default
+                vicinae.homeManagerModules.default
+              ];
               users.${user} = import ./hosts/nix-darwin/home.nix;
             };
           }
@@ -132,13 +138,13 @@
         modules = [
           ./hosts/nixos-pav/configuration.nix
           home-manager.nixosModules.home-manager
-          beankey.nixosModules.default
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               backupFileExtension = "hm-backup";
               extraSpecialArgs = { inherit user; };
+              sharedModules = [ beankey.homeModules.default ];
               users.${user} = import ./hosts/nixos-pav/home.nix;
             };
           }

@@ -34,6 +34,7 @@
 
   imports = [
     ../../modules
+    ../../modules/beankey.nix
     ../../modules/font.nix
     ../../modules/niri
     ../../modules/shell

@@ -75,6 +75,7 @@
 
   imports = [
     ../../modules
+    ../../modules/beankey.nix
     ../../modules/font.nix
     ../../modules/shell
     ../../modules/starship

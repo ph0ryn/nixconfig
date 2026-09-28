@@ -1,24 +1,5 @@
 { user, ... }:
 {
-  programs.beanKey = {
-    enable = true;
-    useBeanKeyTheme = true;
-
-    conversion = {
-      typeBackslash = false;
-      typeHalfSpace = true;
-      optionDirectFullWidthInput = false;
-      punctuationStyle = "kuten_and_toten";
-    };
-
-    zenz = {
-      inferenceLimit = 3;
-      profile = "学生";
-      topic = "プログラミング";
-      preference = "カタカナ優先";
-    };
-  };
-
   i18n = {
     defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = {
@@ -32,51 +13,50 @@
       LC_TELEPHONE = "ja_JP.UTF-8";
       LC_TIME = "ja_JP.UTF-8";
     };
-    inputMethod = {
-      enable = true;
-      type = "fcitx5";
-      fcitx5 = {
-        settings.inputMethod = {
-          GroupOrder."0" = "Default";
-          "Groups/0" = {
-            Name = "Default";
-            "Default Layout" = "us";
-            DefaultIM = "beankey";
-          };
-          "Groups/0/Items/0" = {
-            Name = "keyboard-us";
-            Layout = "";
-          };
-          "Groups/0/Items/1" = {
-            Name = "beankey";
-            Layout = "";
-          };
-        };
-        waylandFrontend = true;
-      };
-    };
   };
 
-  home-manager.users.${user}.wayland.windowManager.niri.settings.binds = {
-    "Henkan_Mode" = {
-      _props = {
-        allow-inhibiting = false;
-        repeat = false;
+  home-manager.users.${user} = {
+    i18n.inputMethod.fcitx5 = {
+      settings.inputMethod = {
+        GroupOrder."0" = "Default";
+        "Groups/0" = {
+          Name = "Default";
+          "Default Layout" = "us";
+          DefaultIM = "beankey";
+        };
+        "Groups/0/Items/0" = {
+          Name = "keyboard-us";
+          Layout = "";
+        };
+        "Groups/0/Items/1" = {
+          Name = "beankey";
+          Layout = "";
+        };
       };
-      spawn = [
-        "fcitx5-remote"
-        "-o"
-      ];
+      waylandFrontend = true;
     };
-    "Muhenkan" = {
-      _props = {
-        allow-inhibiting = false;
-        repeat = false;
+
+    wayland.windowManager.niri.settings.binds = {
+      "Henkan_Mode" = {
+        _props = {
+          allow-inhibiting = false;
+          repeat = false;
+        };
+        spawn = [
+          "fcitx5-remote"
+          "-o"
+        ];
       };
-      spawn = [
-        "fcitx5-remote"
-        "-c"
-      ];
+      "Muhenkan" = {
+        _props = {
+          allow-inhibiting = false;
+          repeat = false;
+        };
+        spawn = [
+          "fcitx5-remote"
+          "-c"
+        ];
+      };
     };
   };
 }
