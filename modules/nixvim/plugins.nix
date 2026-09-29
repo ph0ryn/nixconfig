@@ -1,7 +1,9 @@
 {
   programs.nixvim =
-    { lib, ... }:
+    { lib, pkgs, ... }:
     {
+      extraPackages = [ pkgs.tree-sitter ];
+
       plugins.lazy.settings.spec = [
         {
           __unkeyed = "catppuccin/nvim";
@@ -59,6 +61,20 @@
               style = "#806d9c";
             };
           };
+        }
+        {
+          __unkeyed = "nvim-treesitter/nvim-treesitter";
+          lazy = false;
+          build = ":TSUpdate";
+        }
+        {
+          __unkeyed = "moonbit-community/moonbit.nvim";
+          main = "moonbit";
+          dependencies = [
+            "nvim-lua/plenary.nvim"
+            "nvim-treesitter/nvim-treesitter"
+          ];
+          opts.treesitter.auto_install = true;
         }
         { __unkeyed = "vim-denops/denops.vim"; }
         {
