@@ -24,6 +24,24 @@
           config = true;
         }
         {
+          __unkeyed = "nvim-neo-tree/neo-tree.nvim";
+          main = "neo-tree";
+          branch = "v3.x";
+          lazy = false;
+          dependencies = [
+            "nvim-lua/plenary.nvim"
+            "MunifTanjim/nui.nvim"
+            "nvim-tree/nvim-web-devicons"
+          ];
+          opts.filesystem.filtered_items.visible = true;
+        }
+        {
+          __unkeyed = "nvim-lualine/lualine.nvim";
+          main = "lualine";
+          dependencies = [ "nvim-tree/nvim-web-devicons" ];
+          config = true;
+        }
+        {
           __unkeyed = "j-hui/fidget.nvim";
           main = "fidget";
           config = true;
@@ -46,6 +64,21 @@
         {
           __unkeyed = "shellRaining/hlchunk.nvim";
           main = "hlchunk";
+          config = lib.nixvim.mkRaw ''
+            function(_, opts)
+              local helper = require("hlchunk.utils.chunkHelper")
+              local get_chunk_range = helper.get_chunk_range
+              -- hlchunk's delayed callback combines the old buffer with the current cursor.
+              helper.get_chunk_range = function(args)
+                local bufnr = args.pos.bufnr
+                if bufnr ~= 0 and bufnr ~= vim.api.nvim_get_current_buf() then
+                  return helper.CHUNK_RANGE_RET.NO_CHUNK, { bufnr = bufnr, start = -1, finish = -1 }
+                end
+                return get_chunk_range(args)
+              end
+              require("hlchunk").setup(opts)
+            end
+          '';
           opts = {
             blank.enable = false;
             chunk = {

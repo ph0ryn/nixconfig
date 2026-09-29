@@ -40,4 +40,14 @@ vim.g.signature_help_config = {
     contentsStyle = "full",
     viewStyle = "floating"
 }
+local popup_preview_lsp = require("popup_preview.nvimlsp")
+local get_resolved_item = popup_preview_lsp.get_resolved_item
+popup_preview_lsp.get_resolved_item = function(arg)
+    if #vim.lsp.get_clients({ bufnr = 0, method = "completionItem/resolve" }) == 0 then
+        vim.fn["popup_preview#doc#close_floating"]()
+        return
+    end
+    return get_resolved_item(arg)
+end
+
 vim.fn["popup_preview#enable"]()
