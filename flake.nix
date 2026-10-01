@@ -37,6 +37,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-vite-plus = {
+      url = "github:ryoppippi/nix-vite-plus";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     gh-fzf-get = {
       url = "github:ph0ryn/gh-fzf-get";
@@ -81,6 +85,7 @@
       ankerscale,
       vicinae,
       nixvim,
+      nix-vite-plus,
       ...
     }:
     let
@@ -123,6 +128,7 @@
               indexion-nix.overlays.default
               moonbit-overlay.overlays.default
               ankerscale.overlays.default
+              nix-vite-plus.overlays.default
             ];
           }
         ];
@@ -153,6 +159,7 @@
               filetree-nix.overlays.default
               indexion-nix.overlays.default
               moonbit-overlay.overlays.default
+              nix-vite-plus.overlays.default
             ];
           }
         ];

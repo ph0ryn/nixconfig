@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   ...
 }:
@@ -6,6 +7,7 @@
   home.packages = with pkgs; [
     # package managers
     uv
+    vite-plus
     pnpm_11
     ni
 
@@ -47,6 +49,10 @@
       '';
     };
   };
+
+  home.activation.vitePlusSystemTools = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    run env VP_SELF_SETUP_NO_MODIFY_PATH=1 ${pkgs.vite-plus}/bin/vp env off
+  '';
 
   home.sessionPath = [
     "$HOME/.local/bin"
