@@ -11,12 +11,15 @@
     mutableUserSettings = false;
 
     extensions = [
+      "astro"
       "catppuccin-icons"
       "csharp"
       "git-firefly"
       "html"
       "iwe"
+      "lua"
       "macos-classic"
+      "mdx"
       "moonbit"
       "nix"
       "oxc"
@@ -69,6 +72,9 @@
           document_folding_ranges = "on";
           formatter.language_server.name = "rumdl";
           format_on_save = "on";
+        };
+        MDX = {
+          remove_trailing_whitespace_on_save = false;
         };
         Python = {
           code_actions_on_format."source.organizeImports.ruff" = true;
