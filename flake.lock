@@ -242,6 +242,26 @@
         "type": "github"
       }
     },
+    "gitto": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791813305,
+        "narHash": "sha256-4TJjaWHYBthRg+N71AuhEbw7+83+OVgIx3lsj0YmyLo=",
+        "owner": "ph0ryn",
+        "repo": "gitto",
+        "rev": "09c130460dfbcf72ff2932c3e6c5db86c0b23423",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ph0ryn",
+        "repo": "gitto",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -564,6 +584,7 @@
         "filetree-nix": "filetree-nix",
         "gh-fzf-get": "gh-fzf-get",
         "gh-license": "gh-license",
+        "gitto": "gitto",
         "home-manager": "home-manager_2",
         "indexion-nix": "indexion-nix",
         "moonbit-overlay": "moonbit-overlay",

@@ -66,6 +66,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.moonbit-overlay.follows = "moonbit-overlay";
     };
+    gitto = {
+      url = "github:ph0ryn/gitto";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -86,6 +90,7 @@
       vicinae,
       nixvim,
       nix-vite-plus,
+      gitto,
       ...
     }:
     let
@@ -129,6 +134,7 @@
               moonbit-overlay.overlays.default
               ankerscale.overlays.default
               nix-vite-plus.overlays.default
+              gitto.overlays.default
             ];
           }
         ];
@@ -160,6 +166,7 @@
               indexion-nix.overlays.default
               moonbit-overlay.overlays.default
               nix-vite-plus.overlays.default
+              gitto.overlays.default
             ];
           }
         ];

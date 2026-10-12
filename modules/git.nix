@@ -75,5 +75,6 @@
     git-filter-repo
     prek
     keifu
+    gitto
   ];
 }
