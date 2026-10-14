@@ -48,6 +48,12 @@
     zsh = {
       enable = true;
       enableCompletion = true;
+      initContent = ''
+        dsh() {
+          /opt/homebrew/opt/node/bin/node \
+            "$HOME/.npm-global/lib/node_modules/@deepseek-ai/dsh/lib/bin.js" "$@"
+        }
+      '';
     };
     git.includes = [ { path = "~/.gitconfig.local"; } ];
   };

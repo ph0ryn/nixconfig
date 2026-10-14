@@ -16,6 +16,10 @@
 
     brews = [
       "duti"
+      {
+        name = "node";
+        link = false;
+      }
       "python@3.14"
     ];
 
