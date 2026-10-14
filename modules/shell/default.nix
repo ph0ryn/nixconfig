@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     eza
+    fd
     filetree
     tree
   ];
