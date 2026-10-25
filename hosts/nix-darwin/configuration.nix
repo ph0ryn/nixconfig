@@ -16,12 +16,6 @@
       automatic = true;
       options = "--delete-older-than 7d";
     };
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-    };
   };
 
   services.nix-daemon.logFile = "/var/log/nix-daemon.log";
@@ -48,6 +42,7 @@
   users.users.${user}.home = "/Users/${user}";
 
   imports = [
+    ../../modules/nix.nix
     ./system.nix
     ./homebrew.nix
     ./tailscale.nix

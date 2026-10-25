@@ -11,11 +11,6 @@
 
   system.stateVersion = "26.05";
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   nixpkgs = {
     hostPlatform = "x86_64-linux";
     config.allowUnfree = true;
@@ -60,6 +55,7 @@
   };
 
   imports = [
+    ../../modules/nix.nix
     ./desktop.nix
     ./hardware-configuration.nix
     ./system.nix
