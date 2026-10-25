@@ -9,7 +9,7 @@
       bashls.enable = true;
       nixd.enable = true;
       ruff.enable = true;
-      tsgo.enable = true;
+      tsc.enable = true;
     };
   };
 }
