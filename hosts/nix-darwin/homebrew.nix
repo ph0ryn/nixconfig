@@ -32,6 +32,7 @@
       "google-chrome"
       "lm-studio"
       "macpacker"
+      "omniwm"
       "orbstack"
       "reqable"
       "slack"

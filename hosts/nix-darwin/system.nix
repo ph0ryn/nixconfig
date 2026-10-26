@@ -36,6 +36,7 @@
 
     # Dock
     dock = {
+      autohide = true;
       show-process-indicators = true;
       show-recents = false;
       launchanim = true;
@@ -50,7 +51,17 @@
 
     screencapture.location = "~/Documents/screenshots";
 
-    WindowManager.EnableTiledWindowMargins = false;
+    # OmniWM requires separate Spaces for each display.
+    spaces.spans-displays = false;
+
+    WindowManager = {
+      GloballyEnabled = false;
+      EnableStandardClickToShowDesktop = false;
+      EnableTilingByEdgeDrag = false;
+      EnableTopTilingByEdgeDrag = false;
+      EnableTilingOptionAccelerator = false;
+      EnableTiledWindowMargins = false;
+    };
 
     controlcenter.BatteryShowPercentage = true;
 
