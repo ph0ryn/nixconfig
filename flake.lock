@@ -29,11 +29,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1792937863,
-        "narHash": "sha256-MV4Ve6eRywEAlxz1TJx42rnLZYsk1ZnzCBynqEICf4U=",
+        "lastModified": 1793276303,
+        "narHash": "sha256-ZxysrXCjA3AMBZELFMpCD2EaTSXY5jtoz41YKLsUDMg=",
         "ref": "refs/heads/main",
-        "rev": "fe9e60924e11e577e2eeb97b68fc896dbaf2eccb",
-        "revCount": 206,
+        "rev": "765cdda63896535d733e0c03bac5908207e3bb67",
+        "revCount": 228,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/ph0ryn/beanKey.git"

@@ -3,18 +3,20 @@
     enable = true;
     useBeanKeyTheme = true;
 
-    conversion = {
-      typeBackslash = false;
-      typeHalfSpace = true;
-      optionDirectFullWidthInput = false;
-      punctuationStyle = "kuten_and_toten";
-    };
+    settings = {
+      conversion = {
+        type_backslash = false;
+        type_half_space = true;
+        option_direct_full_width_input = false;
+        punctuation_style = "kuten_and_toten";
+      };
 
-    zenz = {
-      inferenceLimit = 3;
-      profile = "学生";
-      topic = "プログラミング";
-      preference = "カタカナ優先";
+      zenz = {
+        inference_limit = 3;
+        profile = "学生";
+        topic = "プログラミング";
+        preference = "カタカナ優先";
+      };
     };
   };
 }
