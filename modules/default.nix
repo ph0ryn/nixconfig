@@ -8,7 +8,7 @@
     # package managers
     uv
     vite-plus
-    pnpm_11
+    pnpm
     ni
 
     # runtimes
