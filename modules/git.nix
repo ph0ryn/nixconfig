@@ -28,9 +28,10 @@
 
     gh = {
       enable = true;
-      extensions = [
-        pkgs.gh-fzf-get
-        pkgs.gh-license
+      extensions = with pkgs; [
+        gh-fzf-get
+        gh-license
+        gh-actions-lock
       ];
       settings = {
         version = 1;
