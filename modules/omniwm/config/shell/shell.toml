@@ -1,0 +1,20 @@
+# OmniShell bar overrides for the Default style.
+# Values matching the style/built-in defaults are omitted on purpose.
+
+[profiles]
+
+[profiles.default]
+theme = "wallpaper"
+center = []
+leading = ["omniwm", "workspaces"]
+trailing = ["system-stats"]
+
+[profiles.default.workspaceBar]
+barBorder = "foreground/0.85"
+barFill = "surface/0.7"
+fullWidth = false
+position = "belowMenuBar"
+showFloatingWindows = true
+
+[profiles.default.widgets.omniwm]
+iconColor = "#F0DFD7"

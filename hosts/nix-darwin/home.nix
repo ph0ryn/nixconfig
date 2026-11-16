@@ -87,6 +87,7 @@
     ../../modules/starship
     ../../modules/git.nix
     ./secure-enclave-key.nix
+    ../../modules/omniwm
     ../../modules/zed.nix
     ../../modules/nixvim
     ../../modules/mongodb.nix
